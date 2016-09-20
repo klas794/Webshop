@@ -12,7 +12,7 @@ namespace WebShop.Abstractions
         void SaveItem();
         void UpdateItem();
         void DeleteItem();
-        void New();
+       
 
     }
 }

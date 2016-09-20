@@ -129,6 +129,7 @@
     <Content Include="Default.cshtml" />
     <Content Include="Pages\Master.cshtml" />
     <Content Include=".gitignore" />
+    <Content Include="Tests\logger.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -144,9 +145,12 @@
   <ItemGroup>
     <Compile Include="Abstractions\IBaseProducts.cs" />
     <Compile Include="Abstractions\Interfaces\IBaseUser.cs" />
+    <Compile Include="Abstractions\Interfaces\ILogger.cs" />
     <Compile Include="Classes\BasePage.cs" />
+    <Compile Include="Classes\Logger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

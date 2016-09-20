@@ -11,6 +11,8 @@ namespace WebShop.Abstractions
         void ReadItem();
         void SaveItem();
         void UpdateItem();
-        void DeleteItem(); 
+        void DeleteItem();
+        void New();
+
     }
 }

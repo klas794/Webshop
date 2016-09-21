@@ -146,6 +146,7 @@
     <Content Include="scripts\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="scripts\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="scripts\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Pages\NewsPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -166,6 +167,7 @@
     <Compile Include="Abstractions\Interfaces\INews.cs" />
     <Compile Include="Classes\BasePage.cs" />
     <Compile Include="Classes\Logger.cs" />
+    <Compile Include="Classes\News.cs" />
     <Compile Include="Classes\Product.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

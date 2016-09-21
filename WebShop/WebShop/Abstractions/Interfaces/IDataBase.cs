@@ -12,5 +12,7 @@ namespace WebShop.Abstractions.Interfaces
         List<Product> GetStore();
 
         void UpdateStore(List<Product> products);
-   }
+
+        List<Product> GetDummyProducts(int count);
+    }
 }

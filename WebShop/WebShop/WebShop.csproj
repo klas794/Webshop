@@ -166,9 +166,14 @@
     <Compile Include="Abstractions\Interfaces\ILogger.cs" />
     <Compile Include="Abstractions\Interfaces\INews.cs" />
     <Compile Include="Abstractions\Interfaces\IShoppingCart.cs" />
+    <Compile Include="Classes\Admin.cs" />
     <Compile Include="Classes\BasePage.cs" />
+    <Compile Include="Classes\FileHandler.cs" />
     <Compile Include="Classes\Logger.cs" />
+    <Compile Include="Classes\Product.cs" />
     <Compile Include="Classes\ShoppingCart.cs" />
+    <Compile Include="Classes\DataBase.cs" />
+    <Compile Include="Classes\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

@@ -16,6 +16,18 @@ namespace WebShop.Classes
             discFileName = "webshop-db.txt";
         }
 
+        public List<Product> GetDummyProducts(int count = 10)
+        {
+            List<Product> products = new List<Product>();
+
+            for (int i = 1; i <= count; i++)
+            {
+                products.Add(new Product() { Artnr = count, Title = "Vara " + i });
+            }
+
+            return products;
+        }
+
         public List<Product> GetStore()
         {
             List<Product> products = new List<Product>();

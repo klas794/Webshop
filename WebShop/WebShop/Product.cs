@@ -15,9 +15,19 @@ namespace WebShop
         public string Description { get; set; }
         public string ImageUrl { get; set; }
 
-        public Product()
+        //public Product(int id, int Price,)
+        //{
+        //    this.Id = id;
+        //} 
+
+        public string GetId()
         {
-            
-        } 
-    }
+            return "id= " + Id;
+        }
+
+        public void SetId(int id)
+        {
+            Id = id;
+        }
+    }  
 }

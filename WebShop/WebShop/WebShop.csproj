@@ -166,6 +166,8 @@
     <Compile Include="Abstractions\Interfaces\INews.cs" />
     <Compile Include="Classes\BasePage.cs" />
     <Compile Include="Classes\Logger.cs" />
+    <Compile Include="Classes\Product.cs" />
+    <Compile Include="Classes\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

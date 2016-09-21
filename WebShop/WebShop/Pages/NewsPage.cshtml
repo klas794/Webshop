@@ -1,0 +1,37 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Senast inkommet</title>
+</head>
+<body>
+    <div>
+         
+            @{var myNews = new WebShop.Classes.News(); }
+            @foreach (var product in myNews.NewProducts())
+            {
+                <p>
+                    @Html.Label("Produktnamn: ")
+                    @Html.Raw(product.Name)
+                    <br />
+                    @Html.Label("Typ av produkt: ")
+                    @Html.Raw(product.Type)
+                    <br />
+                    @Html.Label("Pris: ")
+                    @Html.Raw(product.Price)
+                </p>
+
+
+
+
+            }
+            
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+﻿@using WebShop.Classes;
+
+@{
+    Layout = "../Pages/Master.cshtml";
+
+    var logger = new Logger();
+    logger.WriteLogMessage("Test Message");
+
+    var clear = Request.Form["clear"];
+
+    if(!clear.IsEmpty())
+    {
+        logger.Clear();
+    }
+    
+    var log = logger.ReadLogContent();
+}
+
+<h1>Testsida - log</h1>
+
+@foreach (var item in log)
+{
+    <p>@item</p>
+}
+
+<form method="post">
+    <input type="submit" name="clear" value="Rensa logg" />
+</form>

@@ -22,7 +22,7 @@ namespace WebShop.Classes
 
             for (int i = 1; i <= count; i++)
             {
-                products.Add(new Product() { Artnr = count, Title = "Vara " + i });
+                products.Add(new Product() { Artnr = i, Title = "Vara " + i });
             }
 
             return products;

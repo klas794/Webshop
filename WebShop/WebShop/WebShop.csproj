@@ -122,10 +122,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Site.css" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -141,20 +137,7 @@
     <Content Include="scripts\bootstrap-3.3.7-dist\js\bootstrap.js" />
     <Content Include="scripts\bootstrap-3.3.7-dist\js\bootstrap.min.js" />
     <Content Include="scripts\bootstrap-3.3.7-dist\js\npm.js" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <None Include="scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="scripts\bootstrap.js" />
-    <Content Include="scripts\bootstrap.min.js" />
-    <Content Include="scripts\jquery-1.10.2.js" />
-    <Content Include="scripts\jquery-1.10.2.min.js" />
-    <None Include="scripts\jquery.validate-vsdoc.js" />
-    <Content Include="scripts\jquery.validate.js" />
-    <Content Include="scripts\jquery.validate.min.js" />
-    <Content Include="scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="scripts\modernizr-2.6.2.js" />
+    <Content Include="scripts\carousel.css" />
     <Content Include="Tests\logger.cshtml" />
     <Content Include="scripts\bootstrap-3.3.7-dist\css\bootstrap-theme.css.map" />
     <Content Include="scripts\bootstrap-3.3.7-dist\css\bootstrap-theme.min.css.map" />
@@ -164,8 +147,6 @@
     <Content Include="scripts\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="scripts\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="scripts\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="Pages\NewsPage.cshtml" />
-    <Content Include="scripts\jquery-1.10.2.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -182,12 +163,17 @@
     <Compile Include="Abstractions\IBaseProducts.cs" />
     <Compile Include="Abstractions\Interfaces\IAdmin.cs" />
     <Compile Include="Abstractions\Interfaces\IBaseUser.cs" />
+    <Compile Include="Abstractions\Interfaces\IDataBase.cs" />
     <Compile Include="Abstractions\Interfaces\ILogger.cs" />
     <Compile Include="Abstractions\Interfaces\INews.cs" />
+    <Compile Include="Abstractions\Interfaces\IShoppingCart.cs" />
+    <Compile Include="Classes\Admin.cs" />
     <Compile Include="Classes\BasePage.cs" />
+    <Compile Include="Classes\FileHandler.cs" />
     <Compile Include="Classes\Logger.cs" />
-    <Compile Include="Classes\News.cs" />
     <Compile Include="Classes\Product.cs" />
+    <Compile Include="Classes\ShoppingCart.cs" />
+    <Compile Include="Classes\DataBase.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

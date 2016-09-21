@@ -9,7 +9,7 @@ namespace WebShop.Abstractions.Interfaces
     interface IAdmin
     {
         bool LogIn(string userName, string password);
-        bool LogIut();
+        bool LogOut();
 
         void AddProduct();
         void UpdateProduct();

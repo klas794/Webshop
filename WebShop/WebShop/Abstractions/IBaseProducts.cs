@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WebShop.Abstractions
 {
-    interface IBaseProduct
+    interface IBaseProducts
     {
         void ReadItem();
         void SaveItem();

@@ -164,6 +164,7 @@
     <Compile Include="Abstractions\Interfaces\IBaseUser.cs" />
     <Compile Include="Abstractions\Interfaces\ILogger.cs" />
     <Compile Include="Abstractions\Interfaces\INews.cs" />
+    <Compile Include="Abstractions\IShoppingCart.cs" />
     <Compile Include="Classes\BasePage.cs" />
     <Compile Include="Classes\Logger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

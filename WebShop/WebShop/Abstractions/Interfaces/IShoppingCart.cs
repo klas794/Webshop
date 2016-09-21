@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WebShop.Abstractions
+namespace WebShop.Abstractions.Interfaces
 {
     interface IShoppingCart
     {
@@ -15,7 +15,7 @@ namespace WebShop.Abstractions
         void Payment();
         void Offer();
         void Confirmation();
-
+        int CountItems();
 
 
 

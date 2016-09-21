@@ -22,9 +22,9 @@ namespace WebShop.Classes
         {
             List<Product> products = new List<Product>();
 
-            products.Add(new Product() { Name = "Ralph Lauren", Price = 699, Type = "Skjorta" });
-            products.Add(new Product() { Name = "Peak Performance", Price = 1299, Type = "Byxor" });
-            products.Add(new Product() { Name = "Tommy Hilfiger", Price = 2399, Type = "Jacka" });
+            products.Add(new Product() { Title = "Ralph Lauren", Artnr = 699 });
+            products.Add(new Product() { Title = "Peak Performance", Artnr = 1299});
+            products.Add(new Product() { Title = "Tommy Hilfiger", Artnr = 2399 });
 
             return products;
         }

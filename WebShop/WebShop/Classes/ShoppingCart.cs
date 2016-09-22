@@ -8,11 +8,14 @@ namespace WebShop.Classes
 {
     public class ShoppingCart : IShoppingCart
     {
-        private List<int> _products = new List<int>();
 
-        public void AddItem(int artNr)
+        //hämtar shoppinglistan
+        private List<Product> _products = new List<Product>();
+
+        public void AddItem(Product p)
         {
-            _products.Add(artNr);
+            _products.Add(p);
+
         }
 
         public void ClearCart()
@@ -30,19 +33,46 @@ namespace WebShop.Classes
             return _products.Count;
         }
 
-        public void Offer()
+
+        public double totalAmount()
         {
-            throw new NotImplementedException();
+
+            double totalAmount = _products.Sum(x => x.Price) - Discount();
+            return totalAmount;
+
         }
 
-        public void Payment()
+
+        public double Discount()
         {
-            throw new NotImplementedException();
+            //billigaste produkten         
+
+            Product lowestPrice = _products.OrderByDescending(x => x.Price).ToList().Last();
+            //lowestPrice.Price = 0;
+
+            return lowestPrice.Price;
         }
 
-        public void RemoveItem()
+
+
+        //tar bort en produkt i taget
+        public void RemoveItem(Product p)
         {
-            throw new NotImplementedException();
+
+            for (int i = 0; i < _products.Count; i++)
+            {
+                if (_products[i].Artnr == p.Artnr)
+                {
+                    _products.RemoveAt(i);
+                    break;
+                }
+
+
+            }
+
+
         }
     }
 }
+
+

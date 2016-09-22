@@ -8,9 +8,12 @@ namespace WebShop.Abstractions.Interfaces
 {
     interface IBaseUser
     {
-         bool LogIn(string userName, string password);
+        bool LogIn(string userName, string password);
 
-          bool LogIut();
-        
+        bool LogOut();
+
+        bool CreateUser(Classes.User user);
+        bool UppdateUser(Classes.User user);
+        bool RemoveUser(Classes.User user);
     }
 }

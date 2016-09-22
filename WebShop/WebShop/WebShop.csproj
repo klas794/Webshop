@@ -148,6 +148,8 @@
     <Content Include="scripts\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="scripts\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Pages\NewsPage.cshtml" />
+    <Content Include="Tests\table_example.cshtml" />
+    <Content Include="Pages\ProductPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

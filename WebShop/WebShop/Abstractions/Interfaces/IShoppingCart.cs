@@ -8,6 +8,7 @@ namespace WebShop.Abstractions.Interfaces
 {
     interface IShoppingCart
     {
+       
         void AddItem(int artNr);
         void RemoveItem();
         void ClearCart();

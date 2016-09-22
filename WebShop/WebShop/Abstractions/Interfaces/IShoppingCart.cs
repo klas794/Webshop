@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WebShop.Classes;
 
 namespace WebShop.Abstractions.Interfaces
 {
     interface IShoppingCart
     {
        
-        void AddItem(int artNr);
-        void RemoveItem();
+        void AddItem(Product p);
+        void RemoveItem(Product p);
         void ClearCart();
-        void Payment();
-        void Offer();
+       double totalAmount();
+        double Discount();
         void Confirmation();
         int CountItems();
 

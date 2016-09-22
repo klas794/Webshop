@@ -14,9 +14,14 @@
 
     if (!addtocart.IsEmpty())
     {
-        var cart = Session["cart"] as ShoppingCart;
-        cart.AddItem(int.Parse(Request.Form["artnr"]));
-        
+       var cart = Session["cart"] as ShoppingCart;
+       Product p = new Product()
+        {
+            Artnr = int.Parse(Request.Form["artnr"])
+        };
+
+        cart.AddItem(p);
+
         noItemsInCart = cart.CountItems();
     }
 

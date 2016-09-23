@@ -1,4 +1,5 @@
 ﻿@using WebShop.Classes;
+@using System.Text.RegularExpressions;
 
 @{
     Layout = "~/Pages/Master.cshtml";
@@ -6,7 +7,9 @@
     var products = new DataBase().GetDummyProducts(3);
 
     var value = products.Sum(x => x.Price);
+
 }
+
 
 
 <div class="container" style="margin-top:100px">
@@ -24,11 +27,28 @@
     
     @if (Request.Form["action"] == "update")
     {
+
+    HttpPostedFileBase file = Request.Files["image"];
+
+    if (file != null && file.ContentLength > 0)
+    {
+        //string fileName = Path.GetFileName(file.FileName);
+
+        int index = file.FileName.LastIndexOf(".") + 1;
+        var fileEnding = file.FileName.Substring(index);
+        string fileName = "product" + Request.Form["id"] + "." + fileEnding;
+        var path = "~/Images/ProductImages/";
+        string fullPath = Server.MapPath(Path.Combine(path, fileName));
+
+        file.SaveAs(fullPath);
+    }
+
     <div class="alert alert-success" role="alert">
         <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
         <span class="sr-only">Update:</span>
         Product with id @Request.Form["id"] updated.
     </div>
+
     }
 
     <div class="panel panel-default">

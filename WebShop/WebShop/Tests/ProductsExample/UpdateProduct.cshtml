@@ -12,7 +12,7 @@
     <h2>@product.Title</h2>
 
     <div class="row">
-        <form class="col-lg-4" action="ListProducts.cshtml" method="post">
+        <form class="col-lg-4" action="ListProducts.cshtml" method="post" enctype="multipart/form-data">
             <input type="hidden" name="action" value="update" />
             <input type="hidden" name="id" value="@product.Artnr">
             <div class="form-group">
@@ -27,8 +27,14 @@
                 <label for="title">Pris:</label>
                 <input type="text" class="form-control" name="title" value="@product.Price">
             </div>
+            <div class="form-group">
+                <label>Bild:</label>
+                <label class="btn btn-default btn-file">
+                    Välj fil <input type="file" name="image" value="" style="display: none;">
+                </label>
+            </div>
 
-            <input type="submit" class="btn btn-default" value="Uppdatera"></input>
+            <input type="submit" class="btn btn-default" value="Uppdatera">
         </form>
     </div>
 </div>

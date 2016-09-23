@@ -10,10 +10,10 @@ namespace WebShop.Abstractions.Interfaces
     {
         bool LogIn(string userName, string password);
 
-        bool LogOut();
+        //bool LogOut();
 
-        bool CreateUser(Classes.User user);
-        bool UppdateUser(Classes.User user);
-        bool RemoveUser(Classes.User user);
+        //bool CreateUser(Classes.User user);
+        //bool UppdateUser(Classes.User user);
+        //bool RemoveUser(Classes.User user);
     }
 }

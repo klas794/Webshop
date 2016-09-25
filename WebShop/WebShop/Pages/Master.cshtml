@@ -78,7 +78,13 @@
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav pull-right">
-                            <li><a href="Login.cshtml">Logga in</a></li>
+                            @if (Session["userLoggedIn"] as bool? == true)
+                            {
+                                <li><a href="~/Pages/Login.cshtml?logout=true">Logga ut</a></li>
+                            } else
+                            {
+                                <li><a href="~/Pages/Login.cshtml">Logga in</a></li>
+                            }
                         </ul>
                         <ul class="nav navbar-nav">
                             <li class="active"><a href="~/">Hem</a></li>

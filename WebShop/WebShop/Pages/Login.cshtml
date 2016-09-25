@@ -1,8 +1,12 @@
 ﻿@using WebShop.Classes;
 
 @{
+    if(Request.QueryString["logout"] == "true") {
+        Session["userLoggedIn"] = false;
+    }
 
-    if(IsPost) {
+    if(IsPost)
+    {
 
         var repository = new UserRepository();
         
@@ -13,12 +17,10 @@
         Session["userLoggedIn"] = loginSuccess;
     }    
 
+
 }
 
-@if(Session["userLoggedIn"] as bool? == true) {
 
-    <p>Du är inloggad!</p>
-}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -61,11 +63,16 @@
             <div class="col-sm-4">
                 <form class="form-signin" method="post">
                     <h2 class="form-signin-heading">Please sign in</h2>
+                    @if(Session["userLoggedIn"] as bool? == true) {
+
+                    <p>Du är inloggad!</p>
+                    }
+                  
                     <label for="username" class="sr-only">Username</label>
-                    <input type="text" id="inputUsername" class="form-control" placeholder="Användarnamn" required autofocus>
+                    <input type="text" id="inputUsername" name="inputUsername" class="form-control" placeholder="Användarnamn" required autofocus>
 
                     <label for="inputPassword" class="sr-only">Password</label>
-                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                    <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="Password" required>
                     <div class="checkbox">
                         <label>
                             <input type="checkbox" value="remember-me"> Remember me

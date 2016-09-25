@@ -29,14 +29,21 @@ namespace WebShop.Classes
         {
             try
             {
-                if ( email 
-                {
-                    GetUser()
-                }
-              
+                List<User> listOfUsers = GetUsers();
+
+                // version 2
+
+                //listOfUsers.FindAll(x => x.Password == password && x.UserName == userName);
+                //return listOfUsers.Count > 0;
+
+                // version 1
+
+                User user = listOfUsers.First();
+
+                return user.UserName == userName && user.Password == password;
 
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 
                 throw;
@@ -91,12 +98,13 @@ namespace WebShop.Classes
 
         public bool LogOut()
         {
-
+            return true;
         }
 
-
+        /*
         public bool CreateUser(User account)
         {
+
             try
             {
                 if (File.Exists(SiteConstants.PathToUsersXml()))
@@ -140,7 +148,7 @@ namespace WebShop.Classes
                 return false;
             }
         }
-
+        
 
         public bool UppdateUser(User user)
         {
@@ -165,9 +173,34 @@ namespace WebShop.Classes
 
         }
 
-
-        public List<User> GetUser()
+        */
+        public List<User> GetUsers()
         {
+
+            var doc = XDocument.Load(HttpContext.Current.Server.MapPath(@"~\users.xml"));
+
+            string username;
+            string pass;
+
+            username = doc.Elements("Users")
+                .Elements("User").ToList()
+                .Elements("UserName").First().Value;
+
+            pass = doc.Elements("Users")
+                .Elements("User")
+                .Elements("Password").ToList().First().Value;
+
+            var list = new List<User>();
+
+            list.Add(new User()
+            {
+                UserName = username,
+                Password = pass
+            });
+
+            return list;
+
+            /*
             try
             {
                 var users = new List<User>();
@@ -201,9 +234,12 @@ namespace WebShop.Classes
                 }
                 return  new List<User>();
             }
+
+            */
         }
+
     }
-    
+
 
 
 }

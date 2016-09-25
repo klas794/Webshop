@@ -78,7 +78,13 @@
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav pull-right">
-                            <li><a href="Login.cshtml">Logga in</a></li>
+                            @if (Session["userLoggedIn"] as bool? == true)
+                            {
+                                <li><a href="~/Pages/Login.cshtml?logout=true">Logga ut</a></li>
+                            } else
+                            {
+                                <li><a href="~/Pages/Login.cshtml">Logga in</a></li>
+                            }
                         </ul>
                         <ul class="nav navbar-nav">
                             <li class="active"><a href="~/">Hem</a></li>
@@ -88,14 +94,14 @@
                                     <li><a href="~/Pages/NewsPage.cshtml">Nyheter</a></li>
                                     <li role="separator" class="divider"></li>
                                     <li class="dropdown-header">Herr</li>
-                                    <li><a href="#">Byxor</a></li>
-                                    <li><a href="#">Skjortor</a></li>
-                                    <li><a href="#">Slipsar</a></li>
+                                    <li><a href="~/Pages/ProductList.cshtml">Byxor</a></li>
+                                    <li><a href="~/Pages/ProductList.cshtml">Skjortor</a></li>
+                                    <li><a href="~/Pages/ProductList.cshtml">Slipsar</a></li>
                                     <li role="separator" class="divider"></li>
                                     <li class="dropdown-header">Dam</li>
-                                    <li><a href="#">Kjolar</a></li>
-                                    <li><a href="#">Blusar</a></li>
-                                    <li><a href="#">Skor</a></li>
+                                    <li><a href="~/Pages/ProductList.cshtml">Kjolar</a></li>
+                                    <li><a href="~/Pages/ProductList.cshtml">Blusar</a></li>
+                                    <li><a href="~/Pages/ProductList.cshtml">Skor</a></li>
                                 </ul>
                             </li>
                             <li><a href="#about">Om oss</a></li>

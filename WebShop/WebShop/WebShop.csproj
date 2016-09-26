@@ -148,9 +148,13 @@
     <Content Include="scripts\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="scripts\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Pages\NewsPage.cshtml" />
-    <Content Include="Tests\ProductsExample\ListProducts.cshtml" />
+    <Content Include="Pages\Admin\Products\ListProducts.cshtml" />
     <Content Include="Pages\ProductPage.cshtml" />
-    <Content Include="Tests\ProductsExample\UpdateProduct.cshtml" />
+    <Content Include="Pages\Admin\Products\UpdateProduct.cshtml" />
+    <Content Include="Pages\Login.cshtml" />
+    <Content Include="Pages\ProductList.cshtml" />
+    <Content Include="Pages\MasterAdmin.cshtml" />
+    <Content Include="Pages\Admin\ViewLog.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -161,6 +165,7 @@
   <ItemGroup>
     <Content Include="scripts\ai.0.22.19-build00125.js" />
     <Content Include="scripts\ai.0.22.19-build00125.min.js" />
+    <Content Include="users.xml" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -180,9 +185,12 @@
     <Compile Include="Classes\ShoppingCart.cs" />
     <Compile Include="Classes\DataBase.cs" />
     <Compile Include="Classes\User.cs" />
+    <Compile Include="Classes\UserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Images\ProductImages\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

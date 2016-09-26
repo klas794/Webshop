@@ -4,6 +4,10 @@
     Layout = "~/Pages/Master.cshtml";
 
     var products = new DataBase().GetDummyProducts(20);
+
+    var logger = new Logger();
+
+    logger.WriteLogMessage("User listing products");
 }
 <div class="container" style="margin-top: 100px">
 

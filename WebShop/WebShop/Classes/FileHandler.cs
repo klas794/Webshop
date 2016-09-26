@@ -17,12 +17,15 @@ namespace WebShop.Classes
 
         private string GetTempPath()
         {
+
             string path = System.Environment.GetEnvironmentVariable("TEMP");
             if (!path.EndsWith("\\"))
             {
                 path += "\\";
             }
-            return path;
+
+
+            return HttpContext.Current.Server.MapPath("~/");  // path;
         }
     }
 }

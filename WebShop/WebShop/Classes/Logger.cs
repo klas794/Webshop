@@ -8,8 +8,18 @@ using System.Diagnostics;
 
 namespace WebShop.Classes
 {
-    public class Logger : FileHandler, ILogger
+
+    public sealed class Logger : FileHandler, ILogger
     {
+        private static readonly Logger instance = new Logger();
+
+        public static Logger Instance
+        {
+            get
+            {
+                return instance;
+            }
+        }
         
         public Logger()
         {

@@ -1,0 +1,30 @@
+﻿@using WebShop.Classes;
+
+@{
+    Layout = "~/Pages/MasterAdmin.cshtml";
+
+    var logger = new Logger();
+
+    if (!Request.Form["clear"].IsEmpty() && IsPost)
+    {
+        logger.Clear();
+    }
+
+    var log = logger.ReadLogContent();
+}
+
+<div class="container" style="margin-top: 100px">
+
+    <h2>Logg</h2>
+
+    <!-- Three columns of text below the carousel -->
+        @foreach (var message in log)
+        {
+            <p>@message</p>
+        }
+
+    <form method="post">
+        <input type="submit" name="clear" value="Rensa logg" />
+    </form>
+
+</div><!-- /.container -->

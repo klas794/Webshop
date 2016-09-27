@@ -90,3 +90,4 @@ C:\Users\Can\Source\Repos\Webshop\WebShop\WebShop\bin\System.Web.WebPages.Razor.
 C:\Users\Can\Source\Repos\Webshop\WebShop\WebShop\obj\Debug\WebShop.csprojResolveAssemblyReference.cache
 C:\Users\Can\Source\Repos\Webshop\WebShop\WebShop\obj\Debug\WebShop.dll
 C:\Users\Can\Source\Repos\Webshop\WebShop\WebShop\obj\Debug\WebShop.pdb
+C:\Source codes\Repos\Webshop\WebShop\WebShop\obj\Debug\WebShop.csprojResolveAssemblyReference.cache

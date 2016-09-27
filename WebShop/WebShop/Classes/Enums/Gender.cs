@@ -11,6 +11,7 @@ namespace WebShop.Enums
         Dam = 1
     }
 
+
     public static class Gender
     {
         public static string GetGenderName(int gender)

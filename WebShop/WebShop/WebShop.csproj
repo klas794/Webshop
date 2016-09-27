@@ -141,6 +141,7 @@
     <Content Include="Pages\ProductList.cshtml" />
     <Content Include="Pages\ProductPage.cshtml" />
     <Content Include="Tests\logger.cshtml" />
+    <Content Include="Pages\SearchResult.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -170,6 +171,7 @@
     <Compile Include="Classes\Logger.cs" />
     <Compile Include="Classes\News.cs" />
     <Compile Include="Classes\Product.cs" />
+    <Compile Include="Classes\SearchProducts.cs" />
     <Compile Include="Classes\ShoppingCart.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="Classes\UserRepository.cs" />

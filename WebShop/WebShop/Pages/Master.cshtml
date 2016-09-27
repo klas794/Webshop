@@ -107,7 +107,11 @@
                             <li><a href="#about">Om oss</a></li>
                             <li><a href="#contact">Kontakt</a></li>
                             <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Varukorg (@noItemsInCart items)</a></li>
-                            
+                            <li>
+                                <a>
+                                    @Html.TextBox("Searchstring", null, new { Style = "color:black" })
+                                <input type="submit" value="Sök" style="color:black;" />
+                            </a>
                         </ul>
                     </div>
                 </div>

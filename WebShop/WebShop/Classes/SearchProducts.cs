@@ -20,6 +20,7 @@ namespace WebShop.Classes
             }
 
             return View(products);
+
         }
 
         private ActionResult View(IEnumerable<Product> products)

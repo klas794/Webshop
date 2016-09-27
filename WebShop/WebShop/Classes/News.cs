@@ -25,9 +25,15 @@ namespace WebShop.Classes
         {
             List<Product> products = new List<Product>();
 
-            products.Add(new Product() { Title = "Ralph Lauren", Price = 699, ArrivalDate= new DateTime(2014, 06, 21), Gender = Gender.GetGenderName((int)GenderEnum.Herr)});
-            products.Add(new Product() { Title = "Peak Performance", Price = 1299, ArrivalDate = new DateTime(2014, 12, 09), Gender = Gender.GetGenderName((int)GenderEnum.Dam)});
-            products.Add(new Product() { Title = "Tommy Hilfiger", Price = 2399, ArrivalDate = new DateTime(2016, 01, 06), Gender = Gender.GetGenderName((int)GenderEnum.Dam) });
+            products.Add(new Product() { Title = "Ralph Lauren", Price = 699,
+                ArrivalDate = new DateTime(2014, 06, 21),
+                Gender = Gender.GetGenderName((int)GenderEnum.Herr)});
+            products.Add(new Product() { Title = "Peak Performance", Price = 1299,
+                ArrivalDate = new DateTime(2014, 12, 09),
+                Gender = Gender.GetGenderName((int)GenderEnum.Dam)});
+            products.Add(new Product() { Title = "Tommy Hilfiger", Price = 2399,
+                ArrivalDate = new DateTime(2016, 01, 06),
+                Gender = Gender.GetGenderName((int)GenderEnum.Dam) });
 
             return products.OrderByDescending(x => x.ArrivalDate).ToList();
         }

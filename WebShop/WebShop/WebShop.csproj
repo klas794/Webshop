@@ -178,6 +178,7 @@
     <Compile Include="Abstractions\Interfaces\IShoppingCart.cs" />
     <Compile Include="Classes\Admin.cs" />
     <Compile Include="Classes\BasePage.cs" />
+    <Compile Include="Classes\Enums\Gender.cs" />
     <Compile Include="Classes\FileHandler.cs" />
     <Compile Include="Classes\Logger.cs" />
     <Compile Include="Classes\News.cs" />

@@ -122,40 +122,25 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\ProductImages\product1.png" />
+    <Content Include="Images\ProductImages\product2.png" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Default.cshtml" />
     <Content Include="Pages\Master.cshtml" />
-    <Content Include=".gitignore" />
-    <Content Include="scripts\bootstrap-3.3.7-dist\css\bootstrap-theme.css" />
-    <Content Include="scripts\bootstrap-3.3.7-dist\css\bootstrap-theme.min.css" />
-    <Content Include="scripts\bootstrap-3.3.7-dist\css\bootstrap.css" />
-    <Content Include="scripts\bootstrap-3.3.7-dist\css\bootstrap.min.css" />
-    <Content Include="scripts\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="scripts\bootstrap-3.3.7-dist\js\bootstrap.js" />
-    <Content Include="scripts\bootstrap-3.3.7-dist\js\bootstrap.min.js" />
-    <Content Include="scripts\bootstrap-3.3.7-dist\js\npm.js" />
-    <Content Include="scripts\carousel.css" />
-    <Content Include="Tests\logger.cshtml" />
-    <Content Include="scripts\bootstrap-3.3.7-dist\css\bootstrap-theme.css.map" />
-    <Content Include="scripts\bootstrap-3.3.7-dist\css\bootstrap-theme.min.css.map" />
-    <Content Include="scripts\bootstrap-3.3.7-dist\css\bootstrap.css.map" />
-    <Content Include="scripts\bootstrap-3.3.7-dist\css\bootstrap.min.css.map" />
-    <Content Include="scripts\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="scripts\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="scripts\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="scripts\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="Pages\NewsPage.cshtml" />
+    <Content Include="Kunder.cshtml" />
+    <Content Include="webshop-log.txt" />
     <Content Include="Pages\Admin\Products\ListProducts.cshtml" />
-    <Content Include="Pages\ProductPage.cshtml" />
     <Content Include="Pages\Admin\Products\UpdateProduct.cshtml" />
-    <Content Include="Pages\Login.cshtml" />
-    <Content Include="Pages\ProductList.cshtml" />
-    <Content Include="Pages\MasterAdmin.cshtml" />
     <Content Include="Pages\Admin\ViewLog.cshtml" />
-    <Content Include="Pages\SearchResult.cshtml" />
+    <Content Include="Pages\Login.cshtml" />
+    <Content Include="Pages\MasterAdmin.cshtml" />
+    <Content Include="Pages\NewsPage.cshtml" />
+    <Content Include="Pages\ProductList.cshtml" />
+    <Content Include="Pages\ProductPage.cshtml" />
+    <Content Include="Tests\logger.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -179,20 +164,18 @@
     <Compile Include="Abstractions\Interfaces\IShoppingCart.cs" />
     <Compile Include="Classes\Admin.cs" />
     <Compile Include="Classes\BasePage.cs" />
+    <Compile Include="Classes\DataBase.cs" />
     <Compile Include="Classes\Enums\Gender.cs" />
     <Compile Include="Classes\FileHandler.cs" />
     <Compile Include="Classes\Logger.cs" />
     <Compile Include="Classes\News.cs" />
     <Compile Include="Classes\Product.cs" />
-    <Compile Include="Classes\SearchProducts.cs" />
     <Compile Include="Classes\ShoppingCart.cs" />
-    <Compile Include="Classes\DataBase.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="Classes\UserRepository.cs" />
+    <Compile Include="Enums\Gender.cs" />
+    <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Images\ProductImages\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

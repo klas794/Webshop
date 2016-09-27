@@ -13,5 +13,7 @@ namespace WebShop.Classes
         public double Price { get; set; }
         public string Gender { get; set; }
         public DateTime ArrivalDate { get; set; }
+        public string Description { get; set; }
+        public string ImageUrl { get; set; }
     }
 }

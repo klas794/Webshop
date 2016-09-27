@@ -43,7 +43,7 @@ namespace WebShop.Classes
                 return user.UserName == userName && user.Password == password;
 
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 
                 throw;

@@ -175,8 +175,6 @@
     <Compile Include="Classes\ShoppingCart.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="Classes\UserRepository.cs" />
-    <Compile Include="Enums\Gender.cs" />
-    <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <PropertyGroup>

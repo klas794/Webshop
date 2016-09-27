@@ -13,8 +13,9 @@
 
     <!-- Three columns of text below the carousel -->
     <div class="row">
-        @foreach (var product in products)
-        {
+
+        @*@foreach (var product in products)
+        {*@
         <div class="col-lg-4" style="text-align: center">
             <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
             <h2>@product.Title</h2>
@@ -24,7 +25,7 @@
                 <input class="btn btn-default" type="submit" value="Add to cart" name="addtocart" />
             </form>
         </div><!-- /.col-lg-4 -->
-        }
+       @* }*@
     </div><!-- /.row -->
 
 </div><!-- /.container -->

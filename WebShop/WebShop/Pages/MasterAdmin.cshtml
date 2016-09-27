@@ -3,28 +3,9 @@
 @{
     Layout = null;
 
-    if(Session["cart"] == null)
-    {
-        Session["cart"] = new ShoppingCart();
-    }
+    var logger = new Logger();
 
-    var addtocart = Request.Form["addtocart"];
-
-    var noItemsInCart = 0;
-
-    if (!addtocart.IsEmpty())
-    {
-       var cart = Session["cart"] as ShoppingCart;
-       Product p = new Product()
-        {
-            Artnr = int.Parse(Request.Form["artnr"])
-        };
-
-        cart.AddItem(p);
-
-        noItemsInCart = cart.CountItems();
-    }
-
+    logger.WriteLogMessage("Admin area accessed");
 }
 
 
@@ -74,7 +55,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="~/">Project name</a>
+                        <a class="navbar-brand" href="~/">Admin</a>
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav pull-right">
@@ -87,27 +68,10 @@
                             }
                         </ul>
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="~/">Hem</a></li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Kategorier <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="~/Pages/NewsPage.cshtml">Nyheter</a></li>
-                                    <li role="separator" class="divider"></li>
-                                    <li class="dropdown-header">Herr</li>
-                                    <li><a href="~/Pages/ProductList.cshtml">Byxor</a></li>
-                                    <li><a href="~/Pages/ProductList.cshtml">Skjortor</a></li>
-                                    <li><a href="~/Pages/ProductList.cshtml">Slipsar</a></li>
-                                    <li role="separator" class="divider"></li>
-                                    <li class="dropdown-header">Dam</li>
-                                    <li><a href="~/Pages/ProductList.cshtml">Kjolar</a></li>
-                                    <li><a href="~/Pages/ProductList.cshtml">Blusar</a></li>
-                                    <li><a href="~/Pages/ProductList.cshtml">Skor</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#about">Om oss</a></li>
-                            <li><a href="#contact">Kontakt</a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart (@noItemsInCart items)</a></li>
-                            
+                            <li class="active"><a href="~/">WebShop</a></li>
+                            <li><a href="~/Pages/Admin/ViewLog.cshtml">Logg</a></li>
+                            <li><a href="~/Pages/Admin/ListUsers.cshtml">Användare</a></li>
+                            <li><a href="~/Pages/Admin/Products/ListProducts.cshtml">Produkter</a></li>
                         </ul>
                     </div>
             </nav>

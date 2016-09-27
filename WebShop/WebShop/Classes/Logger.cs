@@ -8,20 +8,29 @@ using System.Diagnostics;
 
 namespace WebShop.Classes
 {
-    public class Logger : ILogger
-    {
-        private string logFileName; 
 
+    public sealed class Logger : FileHandler, ILogger
+    {
+        private static readonly Logger instance = new Logger();
+
+        public static Logger Instance
+        {
+            get
+            {
+                return instance;
+            }
+        }
+        
         public Logger()
         {
-            logFileName = GetTempPath() + "webshop-log.txt";
+            discFileName = "webshop-log.txt";
         }
 
         public void Clear()
         {
             try
             {
-                File.WriteAllText(logFileName, "");
+                File.WriteAllText(discPath + discFileName, "");
             }
             catch (Exception e)
             {
@@ -34,7 +43,7 @@ namespace WebShop.Classes
         {
             try
             {
-                return File.ReadAllLines(logFileName);
+                return File.ReadAllLines(discPath + discFileName);
             }
             catch (Exception e) {
 
@@ -47,7 +56,7 @@ namespace WebShop.Classes
         {
             try
             {
-                using (StreamWriter sw = new StreamWriter(logFileName, true))
+                using (StreamWriter sw = new StreamWriter(discPath + discFileName, true))
                 {
                     sw.Write("{0} - {1} : ", 
                         DateTime.Now.ToShortDateString(),
@@ -61,15 +70,6 @@ namespace WebShop.Classes
                 throw;
             }
         }
-
-        private string GetTempPath()
-        {
-            string path = System.Environment.GetEnvironmentVariable("TEMP");
-            if (!path.EndsWith("\\"))
-            {
-                path += "\\";
-            }
-            return path;
-        }
+        
     }
 }

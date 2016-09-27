@@ -1,0 +1,52 @@
+﻿@{
+    Layout = "~/Pages/Master.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Senast inkommet</title>
+</head>
+<body>
+    <div class="container" style="margin-top:100px">
+         
+        Filtrera på:
+        <p style="margin-bottom:20px;">
+            @Html.Label("Herr")
+            <input style="margin-right:15px;" type="checkbox" id="HerrChk" checked="checked"/>
+            @Html.Label("Dam")
+            <input type="checkbox" id="DamChk" checked="checked" />
+        </p>
+
+
+        <div>
+
+            @{var myNews = new WebShop.Classes.News(); }
+            @foreach (var product in myNews.NewProducts())
+             {
+                <p style="float:left; margin-right:50px;">
+                    @Html.Label("Produktnamn: ")
+                    @Html.Raw(product.Title)
+                    <br />
+                    @Html.Label("Pris: ")
+                    @Html.Raw(product.Price)
+                    <br />
+                    <label class="@product.Gender" hidden="hidden"></label>
+                    @Html.Label("Inkom datum: ")
+                    @Html.Raw(product.ArrivalDate.ToShortDateString())
+                </p>
+
+                
+              }
+         </div>
+
+
+            
+        
+    </div>
+    <script src="~/scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/scripts/webshop.js"></script>
+</body>
+</html>

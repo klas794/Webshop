@@ -44,5 +44,15 @@ namespace WebShop.Classes
         {
 
         }
+
+        public bool LogIn(string userName, string password)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool LogOut()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -36,7 +36,6 @@ namespace WebShop.Classes
 
         public double totalAmount()
         {
-
             double totalAmount = _products.Sum(x => x.Price) - Discount();
             return totalAmount;
 
@@ -45,6 +44,11 @@ namespace WebShop.Classes
 
         public double Discount()
         {
+            if(_products.Count == 0)
+            {
+                return 0;
+            }
+            
             //billigaste produkten         
 
             Product lowestPrice = _products.OrderByDescending(x => x.Price).ToList().Last();
@@ -67,9 +71,29 @@ namespace WebShop.Classes
                     break;
                 }
 
-
             }
+            
+        }
 
+        public List<Product> GetItems()
+        {
+            PopulateProductsData();
+
+            return _products;
+
+        }
+
+        private void PopulateProductsData()
+        {
+            var repo = new ProductsRepository();
+            var allProducts = repo.GetProducts();
+
+            for (int i = 0; i < _products.Count; i++)
+            {
+                var product = allProducts.Find(x => _products[i].Artnr == x.Artnr);
+
+                _products[i] = product;
+            }
 
         }
     }

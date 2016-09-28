@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Products>
+  <Product>
+    <Artnr>1</Artnr>
+    <Title>Vara 1</Title>
+    <Price>123</Price>
+  </Product>
+  <Product>
+    <Artnr>2</Artnr>
+    <Title>Vara 2</Title>
+    <Price>456</Price>
+  </Product>
+  <Product>
+    <Artnr>3</Artnr>
+    <Title>Vara 3</Title>
+    <Price>789</Price>
+  </Product>  
+</Products>

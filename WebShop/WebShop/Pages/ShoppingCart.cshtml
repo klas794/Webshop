@@ -83,4 +83,11 @@
         </div>
     </div>
 
+    @if(Session["userLoggedIn"] as bool? == true)
+    {
+        <form>
+            <input type="submit" value="Köp" />
+        </form>
+    }
+
     </div>

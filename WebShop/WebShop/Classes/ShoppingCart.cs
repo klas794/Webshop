@@ -44,19 +44,24 @@ namespace WebShop.Classes
 
         public double Discount()
         {
-            if(_products.Count == 0)
+            if (_products.Count == 0)
             {
                 return 0;
             }
-            
             //billigaste produkten         
 
-            Product lowestPrice = _products.OrderByDescending(x => x.Price).ToList().Last();
-            //lowestPrice.Price = 0;
+            if (CountItems() > 2)
+            {
+                Product lowestPrice = _products.OrderByDescending(x => x.Price).ToList().Last();
+                return lowestPrice.Price;
+            }
 
-            return lowestPrice.Price;
+            else
+            {
+                return 0;
+            }
+
         }
-
 
 
         //tar bort en produkt i taget

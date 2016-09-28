@@ -1,4 +1,5 @@
-﻿@using WebShop.Classes;
+﻿@using System.Web.Mvc.Html
+@using WebShop.Classes;
 
 @{
     Layout = null;
@@ -108,7 +109,16 @@
                             </li>
                             <li><a href="#about">Om oss</a></li>
                             <li><a href="#contact">Kontakt</a></li>
-                            <li><a href="~/Pages/ShoppingCart.cshtml"><span class="glyphicon glyphicon-shopping-cart"></span> Varukorg (@noItemsInCart items)</a></li>
+
+                            <li>
+                                <a>
+                                    <form action="~/Pages/SearchResult.cshtml">
+                                        @Html.TextBox("Searchstring", null, new { Style = "color:black" })
+                                        <input type="submit" value="Sök" style="color: black;" />
+                                    </form>
+                                </a>
+                            </li>
+                            <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Varukorg (@noItemsInCart items)</a></li>
                             
                         </ul>
                     </div>

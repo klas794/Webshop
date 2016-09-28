@@ -6,6 +6,11 @@
     var logger = new Logger();
 
     logger.WriteLogMessage("Admin area accessed");
+
+    if (Session["userIsAdmin"] as bool? != true)
+    {
+        Response.Redirect("~/Pages/Login.cshtml");
+    }
 }
 
 

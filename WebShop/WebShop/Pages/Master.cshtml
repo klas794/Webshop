@@ -12,9 +12,10 @@
 
     var noItemsInCart = 0;
 
+   var cart = Session["cart"] as ShoppingCart;
+
     if (!addtocart.IsEmpty())
     {
-       var cart = Session["cart"] as ShoppingCart;
        Product p = new Product()
         {
             Artnr = int.Parse(Request.Form["artnr"])
@@ -22,8 +23,9 @@
 
         cart.AddItem(p);
 
-        noItemsInCart = cart.CountItems();
     }
+
+    noItemsInCart = cart.CountItems();
 
 }
 
@@ -106,7 +108,7 @@
                             </li>
                             <li><a href="#about">Om oss</a></li>
                             <li><a href="#contact">Kontakt</a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Varukorg (@noItemsInCart items)</a></li>
+                            <li><a href="~/Pages/ShoppingCart.cshtml"><span class="glyphicon glyphicon-shopping-cart"></span> Varukorg (@noItemsInCart items)</a></li>
                             
                         </ul>
                     </div>

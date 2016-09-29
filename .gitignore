@@ -243,3 +243,7 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+
+WebShop.csproj
+WebShop.csproj.user
+WebShop/obj/Debug/

@@ -87,6 +87,7 @@ namespace WebShop.Classes
                 if(item.Artnr == artnr)
                 {
                     products.Remove(item);
+                    break;
                 }
             }
 

@@ -11,6 +11,13 @@
     */
 
     var repoProducts = new ProductsRepository();
+
+    if (Request.QueryString["remove"] != null)
+    {
+        var id = int.Parse(Request.QueryString["remove"]);
+        repoProducts.RemoveProduct(id);
+    }
+
     var products = repoProducts.GetProducts();
     var value = products.Sum(x => x.Price);
 
@@ -26,11 +33,11 @@
 
     @if (Request.QueryString["remove"] != null)
     {
-    <div class="alert alert-danger" role="alert">
-        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-        <span class="sr-only">Error:</span>
-        Product with id @Request.QueryString["remove"] removed.
-    </div>
+        <div class="alert alert-danger" role="alert">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <span class="sr-only">Error:</span>
+            Product with id @Request.QueryString["remove"] removed.
+        </div>
     }
     
     @if (Request.Form["action"] == "update")

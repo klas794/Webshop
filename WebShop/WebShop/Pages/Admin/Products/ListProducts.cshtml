@@ -4,17 +4,25 @@
 @{
     Layout = "~/Pages/MasterAdmin.cshtml";
 
+    /*
     var products = new DataBase().GetDummyProducts(3);
 
     var value = products.Sum(x => x.Price);
+    */
 
+    var repoProducts = new ProductsRepository();
+    var products = repoProducts.GetProducts();
+    var value = products.Sum(x => x.Price);
+
+    var repoOrders = new OrdersRepository();
+    var ordersTotal = repoOrders.GetOrdersValue();
 }
 
 
 
 <div class="container" style="margin-top:100px">
     
-    <h1>Testsida - produkter</h1>
+    <h1>Lagersida ( produkter )</h1>
 
     @if (Request.QueryString["remove"] != null)
     {
@@ -86,11 +94,21 @@
 
     <div class="panel panel-default">
         <!-- Default panel contents -->
-        <div class="panel-heading">Orders value</div>
+        <div class="panel-heading">Lagervärde</div>
         
         <div class="panel-body">
             <strong>@value</strong> kr
         </div>
     </div>
+
+    <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">Ordervärde (lagda ordrar)</div>
+
+        <div class="panel-body">
+            <strong>@ordersTotal</strong> kr
+        </div>
+    </div>
+
 
     </div>

@@ -4,6 +4,23 @@
 @{
     Layout = "~/Pages/Master.cshtml";
 
+    var orderCreated = false;
+
+    if (IsPost && Request.Form["buy"] != null)
+    {
+        var ordersRepo = new OrdersRepository();
+
+        var totals = int.Parse(Request.Form["totals"]);
+
+        ordersRepo.AddOrder(totals);
+
+        Session["cart"] = null;
+        orderCreated = true;
+
+        var log = new Logger();
+        log.WriteLogMessage("User placed an order");
+    }
+
     if (Session["cart"] == null)
     {
         Session["cart"] = new ShoppingCart();
@@ -13,6 +30,8 @@
 
     var items = cart.GetItems();
 
+
+
 }
 
 
@@ -20,6 +39,16 @@
 <div class="container" style="margin-top:100px">
     
     <h1>Varukorg</h1>
+
+    @if (orderCreated)
+    {
+        <div class="alert alert-success" role="alert">
+            <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+            <span class="sr-only">Order:</span>
+            Your order is completed!
+        </div>
+    }
+    
 
     @if (Request.QueryString["remove"] != null)
     {
@@ -83,10 +112,11 @@
         </div>
     </div>
 
-    @if(Session["userLoggedIn"] as bool? == true)
+    @if(Session["userLoggedIn"] as bool? == true && @cart.CountItems() > 0)
     {
-        <form>
-            <input type="submit" value="Köp" />
+        <form method="post">
+            <input type="hidden" name="totals" value="@cart.totalAmount()" />
+            <input type="submit" name="buy" value="Köp" />
         </form>
     }
 

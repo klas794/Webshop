@@ -2,17 +2,20 @@
 <Products>
   <Product>
     <Artnr>1</Artnr>
-    <Title>Vara 1</Title>
+    <Title>Vara 1e</Title>
     <Price>10</Price>
+    <ImageUrl>product1.png</ImageUrl>
   </Product>
   <Product>
     <Artnr>2</Artnr>
-    <Title>Vara 2</Title>
+    <Title>Vara 22</Title>
     <Price>50</Price>
+    <ImageUrl>product2.png</ImageUrl>
   </Product>
   <Product>
     <Artnr>3</Artnr>
     <Title>Vara 3</Title>
     <Price>789</Price>
+    <ImageUrl>product3.png</ImageUrl>
   </Product>
 </Products>

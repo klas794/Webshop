@@ -13,7 +13,7 @@ namespace WebShop.Abstractions.Interfaces
         void AddItem(Product p);
         void RemoveItem(Product p);
         void ClearCart();
-        double totalAmount();
+        double TotalAmount();
         double Discount();
         void Confirmation();
         int CountItems();

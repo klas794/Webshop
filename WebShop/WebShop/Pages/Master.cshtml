@@ -117,8 +117,8 @@
                             <li>
                                 <a>
                                     <form action="~/Pages/SearchResult.cshtml">
-                                        @Html.TextBox("Searchstring", null, new { Style = "color:black" })
-                                        <input type="submit" value="Sök" style="color: black;" />
+                                        @Html.TextBox("Searchstring", null, new { Style = "color:black", @class = "input-sm" })
+                                        <input type="submit" value="Sök" style="color: black;" class="input-sm btn" />
                                     </form>
                                 </a>
                             </li>

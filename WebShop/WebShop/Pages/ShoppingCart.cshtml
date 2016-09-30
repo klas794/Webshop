@@ -6,21 +6,6 @@
 
     var orderCreated = false;
 
-    if (IsPost && Request.Form["buy"] != null)
-    {
-        var ordersRepo = new OrdersRepository();
-
-        var totals = int.Parse(Request.Form["totals"]);
-
-        ordersRepo.AddOrder(totals);
-
-        Session["cart"] = null;
-        orderCreated = true;
-
-        var log = new Logger();
-        log.WriteLogMessage("User placed an order");
-    }
-
     if (Session["cart"] == null)
     {
         Session["cart"] = new ShoppingCart();
@@ -28,13 +13,27 @@
 
     var cart = Session["cart"] as ShoppingCart;
 
+    if (IsPost && Request.Form["buy"] != null)
+    {
+        var ordersRepo = new OrdersRepository();
+
+        var totals = int.Parse(Request.Form["totals"]);
+        var profit = cart.Profit();
+
+        ordersRepo.AddOrder(profit);
+
+        Session["cart"] = new ShoppingCart();
+        cart = Session["cart"] as ShoppingCart;
+
+        orderCreated = true;
+
+        var log = new Logger();
+        log.WriteLogMessage("User placed an order for " + totals + " kr");
+    }
+
     var items = cart.GetItems();
 
-
-
 }
-
-
 
 <div class="container" style="margin-top:100px">
     
@@ -108,16 +107,20 @@
         <div class="panel-heading">Orders value</div>
         
         <div class="panel-body">
-            <strong>@cart.totalAmount()</strong> kr
+            <strong>@cart.TotalAmount()</strong> kr
         </div>
     </div>
 
     @if(Session["userLoggedIn"] as bool? == true && @cart.CountItems() > 0)
     {
         <form method="post">
-            <input type="hidden" name="totals" value="@cart.totalAmount()" />
+            <input type="hidden" name="totals" value="@cart.TotalAmount()" />
             <input type="submit" name="buy" value="Köp" />
         </form>
+    }
+    else
+    {
+        <a href="~/Pages/Login.cshtml" class="btn btn-default">Logga in för att köpa</a>
     }
 
     </div>

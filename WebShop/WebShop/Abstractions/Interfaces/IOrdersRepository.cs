@@ -5,13 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using WebShop.Classes;
 
-namespace WebShop.Abstractions
+namespace WebShop.Abstractions.Interfaces
 {
     interface IOrdersRepository
     {
         List<Order> GetOrders();
 
-        void AddOrder(int value);
+        void AddOrder(double value);
 
         double GetOrdersValue();
     }

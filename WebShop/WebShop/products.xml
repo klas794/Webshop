@@ -3,18 +3,21 @@
   <Product>
     <Artnr>1</Artnr>
     <Title>Vara 1e</Title>
+    <BuyPrice>5</BuyPrice>
     <Price>10</Price>
     <ImageUrl>product1.png</ImageUrl>
   </Product>
   <Product>
     <Artnr>2</Artnr>
     <Title>Vara 22</Title>
+    <BuyPrice>45</BuyPrice>
     <Price>50</Price>
     <ImageUrl>product2.png</ImageUrl>
   </Product>
   <Product>
     <Artnr>3</Artnr>
     <Title>Vara 3</Title>
+    <BuyPrice>500</BuyPrice>
     <Price>789</Price>
     <ImageUrl>product3.png</ImageUrl>
   </Product>

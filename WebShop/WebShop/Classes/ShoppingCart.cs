@@ -34,11 +34,16 @@ namespace WebShop.Classes
         }
 
 
-        public double totalAmount()
+        public double TotalAmount()
         {
             double totalAmount = _products.Sum(x => x.Price) - Discount();
             return totalAmount;
 
+        }
+
+        public double Profit()
+        {
+            return _products.Sum(x => x.Price - x.BuyPrice) - Discount();
         }
 
 

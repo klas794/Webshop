@@ -58,7 +58,7 @@ namespace WebShop.Classes
 
         }
 
-        public void AddOrder(int value)
+        public void AddOrder(double value)
         {
             var orders = GetOrders();
 

@@ -5,6 +5,7 @@
     <Title>Vara 1e</Title>
     <BuyPrice>5</BuyPrice>
     <Price>10</Price>
+    <Description></Description>
     <ImageUrl>product1.png</ImageUrl>
   </Product>
   <Product>
@@ -12,6 +13,7 @@
     <Title>Vara 22</Title>
     <BuyPrice>45</BuyPrice>
     <Price>50</Price>
+    <Description></Description>
     <ImageUrl>product2.png</ImageUrl>
   </Product>
   <Product>
@@ -19,6 +21,15 @@
     <Title>Vara 3</Title>
     <BuyPrice>500</BuyPrice>
     <Price>789</Price>
+    <Description></Description>
     <ImageUrl>product3.png</ImageUrl>
+  </Product>
+  <Product>
+    <Artnr>4</Artnr>
+    <Title>Tröja</Title>
+    <BuyPrice>100</BuyPrice>
+    <Price>200</Price>
+    <Description>Ull- och grantröja</Description>
+    <ImageUrl />
   </Product>
 </Products>

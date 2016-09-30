@@ -50,7 +50,10 @@ namespace WebShop.Classes
                     string buyPrice = item
                         .Elements("BuyPrice").First().Value;
 
-                    string imageUrl = item.Elements("ImageUrl") != null ? 
+                    string description = item.Elements("Description").Count() > 0 ?
+                        item.Elements("Description").First().Value : "";
+
+                    string imageUrl = item.Elements("ImageUrl").Count() > 0 ? 
                         item.Elements("ImageUrl").First().Value: "";
 
                     list.Add(new Product()
@@ -59,6 +62,7 @@ namespace WebShop.Classes
                         Title = title,
                         BuyPrice = double.Parse(buyPrice),
                         Price = double.Parse(price),
+                        Description = description,
                         ImageUrl = imageUrl
                     });
 
@@ -96,8 +100,9 @@ namespace WebShop.Classes
                     .Add(new XElement("Product",
                             new XElement("Artnr", item.Artnr),
                             new XElement("Title", item.Title),
-                            new XElement("BuyPrice", item.Price),
+                            new XElement("BuyPrice", item.BuyPrice),
                             new XElement("Price", item.Price),
+                            new XElement("Description", item.Description),
                             new XElement("ImageUrl", item.ImageUrl)
                             ));
             }
@@ -129,13 +134,22 @@ namespace WebShop.Classes
             {
                 item.Artnr = product.Artnr;
                 item.Title = product.Title;
+                item.Description = product.Description;
+                item.BuyPrice = product.BuyPrice;
                 item.Price = product.Price;
 
-                if(product.ImageUrl != null)
+                if (product.ImageUrl != null)
                 {
                     item.ImageUrl = product.ImageUrl;
                 }
             }
+
+            SaveProducts();
+        }
+
+        public void AddProduct(Product product)
+        {
+            Products.Add(product);
 
             SaveProducts();
         }

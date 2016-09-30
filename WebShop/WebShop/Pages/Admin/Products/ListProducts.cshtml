@@ -18,7 +18,8 @@
         {
             Artnr = int.Parse(Request.Form["id"]),
             Title = Request.Form["title"],
-            Price = int.Parse(Request.Form["price"])
+            BuyPrice = int.Parse(Request.Form["buyprice"]),
+            Price = int.Parse(Request.Form["retailprice"])
         };
 
         HttpPostedFileBase file = Request.Files["image"];
@@ -82,9 +83,10 @@
         <!-- Table -->
         <table class="table">
             <tr>
-                <th>ID</th>
-                <th>Title</th>
-                <th>Price</th>
+                <th>Artnr</th>
+                <th>Titel</th>
+                <th>Inköpspris</th>
+                <th>Pris</th>
                 <th></th>
             </tr>
             @foreach (var item in products)
@@ -92,6 +94,7 @@
                 <tr>
                     <td>@item.Artnr</td>
                     <td>@item.Title</td>
+                    <td>@item.BuyPrice</td>
                     <td>@item.Price</td>
                     <td>
                         <a href="UpdateProduct.cshtml?id=@item.Artnr" class="btn btn-default">

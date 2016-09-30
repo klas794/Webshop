@@ -47,6 +47,9 @@ namespace WebShop.Classes
                     string price = item
                         .Elements("Price").First().Value;
 
+                    string buyPrice = item
+                        .Elements("BuyPrice").First().Value;
+
                     string imageUrl = item.Elements("ImageUrl") != null ? 
                         item.Elements("ImageUrl").First().Value: "";
 
@@ -54,6 +57,7 @@ namespace WebShop.Classes
                     {
                         Artnr = int.Parse(artnr),
                         Title = title,
+                        BuyPrice = double.Parse(buyPrice),
                         Price = double.Parse(price),
                         ImageUrl = imageUrl
                     });
@@ -92,6 +96,7 @@ namespace WebShop.Classes
                     .Add(new XElement("Product",
                             new XElement("Artnr", item.Artnr),
                             new XElement("Title", item.Title),
+                            new XElement("BuyPrice", item.Price),
                             new XElement("Price", item.Price),
                             new XElement("ImageUrl", item.ImageUrl)
                             ));

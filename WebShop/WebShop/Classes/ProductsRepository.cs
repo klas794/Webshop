@@ -14,6 +14,17 @@ namespace WebShop.Classes
 {
     public class ProductsRepository : IProductsRepository
     {
+        public List<Product> Products { get; set; }
+
+        public ProductsRepository()
+        {
+            Products = GetProducts();
+        }
+
+        public Product GetProduct(int artnr)
+        {
+            return Products.First(x => x.Artnr == artnr);
+        }
 
         public List<Product> GetProducts()
         {
@@ -36,11 +47,15 @@ namespace WebShop.Classes
                     string price = item
                         .Elements("Price").First().Value;
 
+                    string imageUrl = item.Elements("ImageUrl") != null ? 
+                        item.Elements("ImageUrl").First().Value: "";
+
                     list.Add(new Product()
                     {
                         Artnr = int.Parse(artnr),
                         Title = title,
-                        Price = double.Parse(price)
+                        Price = double.Parse(price),
+                        ImageUrl = imageUrl
                     });
 
                 }
@@ -57,7 +72,12 @@ namespace WebShop.Classes
 
         public List<Product> SelectProducts(List<int> artNrs)
         {
-            return GetProducts().FindAll( x => artNrs.Equals(x.Artnr) );
+            return Products.FindAll( x => artNrs.Equals(x.Artnr) );
+        }
+
+        public void SaveProducts()
+        {
+            SaveProducts(Products);
         }
 
         public void SaveProducts(List<Product> products)
@@ -72,7 +92,9 @@ namespace WebShop.Classes
                     .Add(new XElement("Product",
                             new XElement("Artnr", item.Artnr),
                             new XElement("Title", item.Title),
-                            new XElement("Price", item.Price)));
+                            new XElement("Price", item.Price),
+                            new XElement("ImageUrl", item.ImageUrl)
+                            ));
             }
 
             document.Save(HttpContext.Current.Server.MapPath(@"~\products.xml"));
@@ -80,7 +102,7 @@ namespace WebShop.Classes
 
         public void RemoveProduct(int artnr)
         {
-            var products = GetProducts();
+            var products = Products;
 
             foreach (var item in products)
             {
@@ -92,6 +114,25 @@ namespace WebShop.Classes
             }
 
             SaveProducts(products);
+        }
+
+        public void UpdateProduct(Product product)
+        {
+            var item = Products.Find(x => x.Artnr == product.Artnr);
+            
+            if(item != null)
+            {
+                item.Artnr = product.Artnr;
+                item.Title = product.Title;
+                item.Price = product.Price;
+
+                if(product.ImageUrl != null)
+                {
+                    item.ImageUrl = product.ImageUrl;
+                }
+            }
+
+            SaveProducts();
         }
     }
 

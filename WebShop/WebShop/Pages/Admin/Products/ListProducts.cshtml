@@ -12,6 +12,33 @@
 
     var repoProducts = new ProductsRepository();
 
+    if (Request.Form["action"] == "update")
+    {
+        Product product = new Product()
+        {
+            Artnr = int.Parse(Request.Form["id"]),
+            Title = Request.Form["title"],
+            Price = int.Parse(Request.Form["price"])
+        };
+
+        HttpPostedFileBase file = Request.Files["image"];
+
+        if (file != null && file.ContentLength > 0)
+        {
+            int index = file.FileName.LastIndexOf(".") + 1;
+            var fileEnding = file.FileName.Substring(index);
+            string fileName = "product" + Request.Form["id"] + "." + fileEnding;
+            var path = Constants.PathProductsImages;
+            string fullPath = Server.MapPath(Path.Combine(path, fileName));
+
+            file.SaveAs(fullPath);
+
+            product.ImageUrl = fileName;
+        }
+
+        repoProducts.UpdateProduct(product);
+    }
+
     if (Request.QueryString["remove"] != null)
     {
         var id = int.Parse(Request.QueryString["remove"]);
@@ -42,28 +69,11 @@
     
     @if (Request.Form["action"] == "update")
     {
-
-    HttpPostedFileBase file = Request.Files["image"];
-
-    if (file != null && file.ContentLength > 0)
-    {
-        //string fileName = Path.GetFileName(file.FileName);
-
-        int index = file.FileName.LastIndexOf(".") + 1;
-        var fileEnding = file.FileName.Substring(index);
-        string fileName = "product" + Request.Form["id"] + "." + fileEnding;
-        var path = "~/Images/ProductImages/";
-        string fullPath = Server.MapPath(Path.Combine(path, fileName));
-
-        file.SaveAs(fullPath);
-    }
-
-    <div class="alert alert-success" role="alert">
-        <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
-        <span class="sr-only">Update:</span>
-        Product with id @Request.Form["id"] updated.
-    </div>
-
+        <div class="alert alert-success" role="alert">
+            <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+            <span class="sr-only">Update:</span>
+            Product with id @Request.Form["id"] updated.
+        </div>
     }
 
     <div class="panel panel-default">

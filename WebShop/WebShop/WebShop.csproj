@@ -131,6 +131,8 @@
     <Content Include="Default.cshtml" />
     <Content Include="Pages\Master.cshtml" />
     <Content Include="Kunder.cshtml" />
+    <Content Include="scripts\jquery-1.10.2.min.js" />
+    <Content Include="scripts\webshop.js" />
     <Content Include="webshop-log.txt" />
     <Content Include="Pages\Admin\Products\ListProducts.cshtml" />
     <Content Include="Pages\Admin\Products\UpdateProduct.cshtml" />

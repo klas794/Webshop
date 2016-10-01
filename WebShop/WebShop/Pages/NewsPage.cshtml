@@ -20,31 +20,28 @@
             <input type="checkbox" id="DamChk" checked="checked" />
         </p>
 
-
-        <div>
-
+        <div class="row">
             @{var myNews = new WebShop.Classes.News(); }
             @foreach (var product in myNews.NewProducts())
-             {
-                <p style="float:left; margin-right:50px;">
-                    @Html.Label("Produktnamn: ")
-                    @Html.Raw(product.Title)
-                    <br />
-                    @Html.Label("Pris: ")
-                    @Html.Raw(product.Price)
-                    <br />
-                    <label class="@product.Gender" hidden="hidden"></label>
-                    @Html.Label("Inkom datum: ")
-                    @Html.Raw(product.ArrivalDate.ToShortDateString())
-                </p>
-
-                
-              }
-         </div>
-
-
-            
-        
+            {
+                <div class="col-lg-4" style="text-align: center">
+                    <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+                    <h2>@Html.Raw(product.Title)</h2>
+                    <p>
+                        @Html.Label("Pris: ")
+                        @Html.Raw(product.Price)
+                        <br />
+                        <label class="@product.Gender" hidden="hidden"></label>
+                        @Html.Label("Inkom datum: ")
+                        @Html.Raw(product.ArrivalDate.ToShortDateString())
+                    </p>
+                    <form method="post">
+                        <input type="hidden" value="@product.Artnr" name="artnr" />
+                        <input class="btn btn-default" type="submit" value="Add to cart" name="addtocart" />
+                    </form>
+                </div><!-- /.col-lg-4 -->
+            }
+        </div><!-- /.row -->
     </div>
     <script src="~/scripts/jquery-1.10.2.min.js"></script>
     <script src="~/scripts/webshop.js"></script>

@@ -5,20 +5,27 @@
 
     if(Request.QueryString["logout"] == "true") {
         Session["userLoggedIn"] = false;
+        Session["userIsAdmin"] = false;
     }
 
     if(IsPost)
     {
 
         var repository = new UserRepository();
-        
+
         bool loginSuccess = repository.LogIn(
-            Request.Form["inputUsername"], 
+            Request.Form["inputUsername"],
             Request.Form["inputPassword"]);
 
         Session["userLoggedIn"] = loginSuccess;
-    }    
 
+
+        if(repository.IsAdmin() && loginSuccess)
+        {
+            Session["userIsAdmin"] = true;
+            Response.Redirect("~/Pages/Admin/Products/ListProducts.cshtml");
+        }
+    }
 
 }
 
@@ -29,7 +36,7 @@
             <div class="col-sm-4">
                 <form class="form-signin" method="post">
                     <h2 class="form-signin-heading">Please sign in</h2>
-                    @if(Session["userLoggedIn"] as bool? == true) {
+                    @if (Session["userLoggedIn"] as bool? == true) {
 
                     <p>Du är inloggad!</p>
                     }

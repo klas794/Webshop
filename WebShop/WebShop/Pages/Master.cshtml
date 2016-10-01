@@ -13,9 +13,10 @@
 
     var noItemsInCart = 0;
 
+   var cart = Session["cart"] as ShoppingCart;
+
     if (!addtocart.IsEmpty())
     {
-       var cart = Session["cart"] as ShoppingCart;
        Product p = new Product()
         {
             Artnr = int.Parse(Request.Form["artnr"])
@@ -23,8 +24,9 @@
 
         cart.AddItem(p);
 
-        noItemsInCart = cart.CountItems();
     }
+
+    noItemsInCart = cart.CountItems();
 
 }
 
@@ -75,10 +77,14 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="~/">Project name</a>
+                        <a class="navbar-brand" href="~/">Webshop</a>
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav pull-right">
+                            @if (Session["userIsAdmin"] as bool? == true)
+                            {
+                                <li><a href="~/Pages/Admin/Products/ListProducts.cshtml">Admin</a></li>
+                            }
                             @if (Session["userLoggedIn"] as bool? == true)
                             {
                                 <li><a href="~/Pages/Login.cshtml?logout=true">Logga ut</a></li>
@@ -107,14 +113,17 @@
                             </li>
                             <li><a href="#about">Om oss</a></li>
                             <li><a href="#contact">Kontakt</a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Varukorg (@noItemsInCart items)</a></li>
+
                             <li>
                                 <a>
                                     <form action="~/Pages/SearchResult.cshtml">
-                                        @Html.TextBox("Searchstring", null, new { Style = "color:black" })
-                                        <input type="submit" value="Sök" style="color: black;" />
+                                        @Html.TextBox("Searchstring", null, new { Style = "color:black", @class = "input-sm" })
+                                        <input type="submit" value="Sök" style="color: black;" class="input-sm btn" />
                                     </form>
                                 </a>
+                            </li>
+                            <li><a href="~/Pages/ShoppingCart.cshtml"><span class="glyphicon glyphicon-shopping-cart"></span> Varukorg (@noItemsInCart items)</a></li>
+                            
                         </ul>
                     </div>
                 </div>

@@ -34,19 +34,26 @@ namespace WebShop.Classes
         }
 
 
-        public double totalAmount()
+        public double TotalAmount()
         {
-
             double totalAmount = _products.Sum(x => x.Price) - Discount();
             return totalAmount;
 
         }
 
+        public double Profit()
+        {
+            return _products.Sum(x => x.Price - x.BuyPrice) - Discount();
+        }
+
 
         public double Discount()
         {
-            // returnerar priset för den billigaste produkten 
-            //ifall antal produkter >2, annars returnerar noll        
+            if (_products.Count == 0)
+            {
+                return 0;
+            }
+            //billigaste produkten         
 
             if (CountItems() > 2)
             {
@@ -74,9 +81,29 @@ namespace WebShop.Classes
                     break;
                 }
 
-
             }
+            
+        }
 
+        public List<Product> GetItems()
+        {
+            PopulateProductsData();
+
+            return _products;
+
+        }
+
+        private void PopulateProductsData()
+        {
+            var repo = new ProductsRepository();
+            var allProducts = repo.GetProducts();
+
+            for (int i = 0; i < _products.Count; i++)
+            {
+                var product = allProducts.Find(x => _products[i].Artnr == x.Artnr);
+
+                _products[i] = product;
+            }
 
         }
     }

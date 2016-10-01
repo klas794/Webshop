@@ -22,8 +22,7 @@ namespace WebShop.Classes
         //    return userList;
         //}
 
-
-
+        public User CurrentUser { get; set; }
 
         public bool LogIn(string userName, string password)
         {
@@ -39,6 +38,8 @@ namespace WebShop.Classes
                 // version 1
 
                 User user = listOfUsers.First();
+
+                CurrentUser = user;
 
                 return user.UserName == userName && user.Password == password;
 
@@ -179,23 +180,26 @@ namespace WebShop.Classes
 
             var doc = XDocument.Load(HttpContext.Current.Server.MapPath(@"~\users.xml"));
 
-            string username;
-            string pass;
-
-            username = doc.Elements("Users")
+            
+            string username = doc.Elements("Users")
                 .Elements("User").ToList()
                 .Elements("UserName").First().Value;
 
-            pass = doc.Elements("Users")
+            string pass = doc.Elements("Users")
                 .Elements("User")
-                .Elements("Password").ToList().First().Value;
+                .Elements("Password").First().Value;
+
+            string isAdmin = doc.Elements("Users")
+                .Elements("User")
+                .Elements("IsAdmin").First().Value;
 
             var list = new List<User>();
 
             list.Add(new User()
             {
                 UserName = username,
-                Password = pass
+                Password = pass,
+                IsAdmin = bool.Parse(isAdmin)
             });
 
             return list;
@@ -236,6 +240,11 @@ namespace WebShop.Classes
             }
 
             */
+        }
+        
+        public bool IsAdmin()
+        {
+            return (CurrentUser != null && CurrentUser.IsAdmin);
         }
 
     }

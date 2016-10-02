@@ -2,12 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using WebShop.Abstractions;
+using WebShop.Abstractions.Interfaces;
 using WebShop.Enums;
 
 namespace WebShop.Classes
 {
-    public class News :INews
+    public class News : INews
     {
+
+        public List<Product> GetProducts()
+        {
+            var repos = new ProductsRepository();
+            return repos.Products;
+        }
+
         bool INews.DisplayImageSlideshow()
         {
             return true;
@@ -17,24 +25,6 @@ namespace WebShop.Classes
         {
             return "Här är de senast inkomna varorna.";
         }
-
-        public List<Product> NewProducts()
-        {
-            List<Product> products = new List<Product>();
-
-            products.Add(new Product() { Title = "Ralph Lauren", Price = 699,
-                ArrivalDate = new DateTime(2014, 06, 21),
-                Gender = Gender.GetGenderName((int)GenderEnum.Herr)});
-            products.Add(new Product() { Title = "Peak Performance", Price = 1299,
-                ArrivalDate = new DateTime(2014, 12, 09),
-                Gender = Gender.GetGenderName((int)GenderEnum.Dam)});
-            products.Add(new Product() { Title = "Tommy Hilfiger", Price = 2399,
-                ArrivalDate = new DateTime(2016, 01, 06),
-                Gender = Gender.GetGenderName((int)GenderEnum.Dam) });
-
-            return products.OrderByDescending(x => x.ArrivalDate).ToList();
-        }
-
 
 
     }

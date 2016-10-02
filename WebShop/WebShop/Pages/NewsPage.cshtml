@@ -22,10 +22,10 @@
 
         <div class="row">
             @{var myNews = new WebShop.Classes.News(); }
-            @foreach (var product in myNews.NewProducts())
+            @foreach (var product in myNews.GetProducts())
             {
                 <div class="col-lg-4" style="text-align: center">
-                    <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+                    <img class="img-circle" src="@product.ImageUrl" alt="Generic placeholder image" width="140" height="140">
                     <h2>@Html.Raw(product.Title)</h2>
                     <p>
                         @Html.Label("Pris: ")
@@ -33,7 +33,7 @@
                         <br />
                         <label class="@product.Gender" hidden="hidden"></label>
                         @Html.Label("Inkom datum: ")
-                        @Html.Raw(product.ArrivalDate.ToShortDateString())
+                        @Html.Raw(product.ArrivalDate)
                     </p>
                     <form method="post">
                         <input type="hidden" value="@product.Artnr" name="artnr" />

@@ -11,7 +11,7 @@ namespace WebShop.Classes
         public ActionResult Index(string searchString)
         {
             News test = new News();
-            var products = from m in test.NewProducts()
+            var products = from m in test.GetProducts()
                          select m;
 
             if (!String.IsNullOrEmpty(searchString))

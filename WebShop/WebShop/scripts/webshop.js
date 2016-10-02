@@ -2,10 +2,10 @@
     $("#HerrChk").click(function () {
         if ($("#HerrChk").is(":checked"))
         {
-            $(".Herr").parent().show();
+            $(".Herr").parent().parent().show();
         }
         else {
-            $(".Herr").parent().hide()
+            $(".Herr").parent().parent().hide()
         }
        
     });
@@ -13,10 +13,10 @@
     $("#DamChk").click(function () {
         if ($("#DamChk").is(":checked"))
         {
-            $(".Dam").parent().show();
+            $(".Dam").parent().parent().show();
         }
         else {
-            $(".Dam").parent().hide();
+            $(".Dam").parent().parent().hide();
         }
     });
 });  

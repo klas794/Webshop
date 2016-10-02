@@ -18,9 +18,6 @@ namespace WebShop.Classes
             return "Här är de senast inkomna varorna.";
         }
 
-        //om product har gender så kan man skapa listor utifrån dam eller herr.
-        //om product även har datum för när det lagts till i shopen kan man sortera ut de 
-        //nyaste produkterna och visa dom under nyheter.
         public List<Product> NewProducts()
         {
             List<Product> products = new List<Product>();

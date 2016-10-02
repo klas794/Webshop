@@ -68,7 +68,7 @@
         <div class="col-lg-4">
             @if (product.ImageUrl != "")
             {
-                <img class="img-circle" src="~/Images/ProductImages/@product.ImageUrl" alt="Product image for @product.Title" width="140" height="140">
+                <img class="img-circle" src="@product.ImageUrl" alt="Product image for @product.Title" width="140" height="140">
             }
             else
             {

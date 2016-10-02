@@ -59,6 +59,10 @@ namespace WebShop.Classes
                     string arrivalDate = item
                         .Elements("ArrivalDate").First().Value;
 
+                    string description = item
+                        .Elements("Description").First().Value;
+
+
                     list.Add(new Product()
                     {
                         Artnr = int.Parse(artnr),
@@ -67,7 +71,8 @@ namespace WebShop.Classes
                         Price = double.Parse(price),
                         ImageUrl = imageUrl,
                         Gender = gender,
-                        ArrivalDate = arrivalDate
+                        ArrivalDate = arrivalDate,
+                        Description = description
                     });
 
                 }
@@ -104,11 +109,12 @@ namespace WebShop.Classes
                     .Add(new XElement("Product",
                             new XElement("Artnr", item.Artnr),
                             new XElement("Title", item.Title),
-                            new XElement("BuyPrice", item.Price),
+                            new XElement("BuyPrice", item.BuyPrice),
                             new XElement("Price", item.Price),
                             new XElement("ImageUrl", item.ImageUrl),
                             new XElement("Gender", item.Gender),
-                            new XElement("ArrivalDate", item.ArrivalDate)
+                            new XElement("ArrivalDate", item.ArrivalDate),
+                            new XElement("Description", item.Description)
                             ));
             }
 
@@ -146,6 +152,13 @@ namespace WebShop.Classes
                     item.ImageUrl = product.ImageUrl;
                 }
             }
+
+            SaveProducts();
+        }
+
+        public void AddProduct(Product product)
+        {
+            Products.Add(product);
 
             SaveProducts();
         }

@@ -2,29 +2,42 @@
 <Products>
   <Product>
     <Artnr>1</Artnr>
-    <Title>Vara 1e</Title>
+    <Title>Shirt</Title>
     <BuyPrice>5</BuyPrice>
     <Price>10</Price>
     <ImageUrl>/Images/ProductImages/product1.png</ImageUrl>
     <Gender>Herr</Gender>
     <ArrivalDate>2016-09-29</ArrivalDate>
+    <Description></Description>
   </Product>
   <Product>
     <Artnr>2</Artnr>
-    <Title>Vara 22</Title>
+    <Title>Cardigan</Title>
     <BuyPrice>45</BuyPrice>
     <Price>50</Price>
-    <ImageUrl>/Images/wesc4.jpg</ImageUrl>
+    <ImageUrl>/Images/ProductImages/oddmolly.jpg</ImageUrl>
     <Gender>Dam</Gender>
     <ArrivalDate>2016-09-22</ArrivalDate>
+    <Description></Description>
   </Product>
   <Product>
     <Artnr>3</Artnr>
-    <Title>Vara 3</Title>
+    <Title>Windstopper jacket</Title>
     <BuyPrice>500</BuyPrice>
     <Price>789</Price>
     <ImageUrl>/Images/ProductImages/product3.png</ImageUrl>
     <Gender>Herr</Gender>
     <ArrivalDate>2016-09-28</ArrivalDate>
+    <Description></Description>
+  </Product>
+  <Product>
+    <Artnr>4</Artnr>
+    <Title>Knitted wool sweater</Title>
+    <BuyPrice>100</BuyPrice>
+    <Price>789</Price>
+    <ImageUrl>/Images/ProductImages/gantwool.jpg</ImageUrl>
+    <Gender>Herr</Gender>
+    <ArrivalDate>2016-09-28</ArrivalDate>
+    <Description>Ull- Ganttröja</Description>
   </Product>
 </Products>

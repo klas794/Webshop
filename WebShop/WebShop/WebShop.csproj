@@ -122,6 +122,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\ProductImages\gantwool.jpg" />
+    <Content Include="Images\ProductImages\oddmolly.jpg" />
     <Content Include="Images\ProductImages\product1.png" />
     <Content Include="Images\ProductImages\product2.png" />
     <Content Include="orders.xml" />
@@ -148,6 +150,7 @@
     <Content Include="Pages\ProductPage.cshtml" />
     <Content Include="Tests\logger.cshtml" />
     <Content Include="Pages\SearchResult.cshtml" />
+    <Content Include="Pages\ShoppingCart.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

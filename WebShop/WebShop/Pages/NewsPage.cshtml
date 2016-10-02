@@ -22,7 +22,7 @@
 
         <div class="row">
             @{var myNews = new WebShop.Classes.News(); }
-            @foreach (var product in myNews.GetProducts())
+            @foreach (var product in myNews.GetProducts().OrderByDescending(x => x.ArrivalDate))
             {
                 <div class="col-lg-4" style="text-align: center">
                     <img class="img-circle" src="@product.ImageUrl" alt="Generic placeholder image" width="140" height="140">

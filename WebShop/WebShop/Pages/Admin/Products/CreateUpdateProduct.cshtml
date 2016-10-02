@@ -8,9 +8,24 @@
     var repo = new ProductsRepository();
 
     int id;
-    int.TryParse(Request.QueryString["id"], out id);
-    var product = repo.GetProduct(id);
-    
+    var valid = int.TryParse(Request.QueryString["id"], out id);
+
+    Product product;
+    string action;
+
+    if(valid)
+    {
+        product = repo.GetProduct(id);
+        action = "update";
+    }
+    else
+    {
+        id = new ProductsRepository().GetProducts().Last().Artnr;
+        id++;
+        product = new Product() { Artnr = id };
+        action = "add";
+    }
+
 }
 
 
@@ -20,7 +35,7 @@
 
     <div class="row">
         <form class="col-lg-4" action="ListProducts.cshtml" method="post" enctype="multipart/form-data">
-            <input type="hidden" name="action" value="update" />
+            <input type="hidden" name="action" value="@action" />
             <input type="hidden" name="id" value="@product.Artnr">
             <div class="form-group">
                 <label for="id">ID</label>
@@ -31,12 +46,16 @@
                 <input type="text" class="form-control" name="title" value="@product.Title">
             </div>
             <div class="form-group">
-                <label for="title">Inköpspris:</label>
-                <input type="text" class="form-control" name="buyprice" value="@product.Price">
+                <label for="buyprice">Inköpspris:</label>
+                <input type="text" class="form-control" name="buyprice" value="@product.BuyPrice">
             </div>
             <div class="form-group">
-                <label for="title">Pris:</label>
+                <label for="retailprice">Pris:</label>
                 <input type="text" class="form-control" name="retailprice" value="@product.Price">
+            </div>
+            <div class="form-group">
+                <label for="description">Beskrivning:</label>
+                <textarea class="form-control" name="description" value="@product.Description"></textarea>
             </div>
             <div class="form-group">
                 <label>Bild:</label>
@@ -44,8 +63,14 @@
                     Välj fil <input type="file" name="image" value="" style="display: none;">
                 </label>
             </div>
-
-            <input type="submit" class="btn btn-default" value="Uppdatera">
+            @if (action == "update")
+            {
+                <input type="submit" class="btn btn-default" value="Uppdatera">
+            }
+            else
+            {
+                <input type="submit" class="btn btn-default" value="Skapa produkt">
+            }
         </form>
     </div>
 </div>

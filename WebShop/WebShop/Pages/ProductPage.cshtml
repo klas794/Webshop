@@ -5,7 +5,10 @@
 
     var id = int.Parse(Request.QueryString["id"]);
 
-    var product = new ProductsRepository().GetProducts().Find(x => x.Artnr == id);
+    var product = new ProductsRepository().GetProduct(id);
+
+    var log = new Logger();
+    log.WriteLogMessage("User viewing product #" + id);
 }
 
 <div class="container marketing" style="margin-top: 100px;">

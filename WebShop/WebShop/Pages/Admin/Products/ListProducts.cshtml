@@ -12,12 +12,13 @@
 
     var repoProducts = new ProductsRepository();
 
-    if (Request.Form["action"] == "update")
+    if (Request.Form["action"] == "update" || Request.Form["action"] == "add")
     {
         Product product = new Product()
         {
             Artnr = int.Parse(Request.Form["id"]),
             Title = Request.Form["title"],
+            Description = Request.Form["description"],
             BuyPrice = int.Parse(Request.Form["buyprice"]),
             Price = int.Parse(Request.Form["retailprice"])
         };
@@ -37,7 +38,13 @@
             product.ImageUrl = fileName;
         }
 
-        repoProducts.UpdateProduct(product);
+        if(Request.Form["action"] == "update") {
+            repoProducts.UpdateProduct(product);
+        }
+        else
+        {
+            repoProducts.AddProduct(product);
+        }
     }
 
     if (Request.QueryString["remove"] != null)
@@ -67,7 +74,7 @@
             Product with id @Request.QueryString["remove"] removed.
         </div>
     }
-    
+
     @if (Request.Form["action"] == "update")
     {
         <div class="alert alert-success" role="alert">
@@ -76,6 +83,19 @@
             Product with id @Request.Form["id"] updated.
         </div>
     }
+
+    @if (Request.Form["action"] == "add")
+    {
+        <div class="alert alert-success" role="alert">
+            <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+            <span class="sr-only">Created:</span>
+            Product with id @Request.Form["id"] created.
+        </div>
+    }
+
+    <div class="panel">
+        <a href="~/Pages/Admin/Products/CreateUpdateProduct.cshtml" class="btn btn-default">Lägg till produkt</a>
+    </div>
 
     <div class="panel panel-default">
         <!-- Default panel contents -->
@@ -97,7 +117,7 @@
                     <td>@item.BuyPrice</td>
                     <td>@item.Price</td>
                     <td>
-                        <a href="UpdateProduct.cshtml?id=@item.Artnr" class="btn btn-default">
+                        <a href="CreateUpdateProduct.cshtml?id=@item.Artnr" class="btn btn-default">
                         <span class="glyphicon glyphicon-edit"></span>
                         Redigera</a>
                         <a href="?remove=@item.Artnr" class="btn btn-default">
@@ -112,23 +132,36 @@
         </table>
     </div>
 
-    <div class="panel panel-default">
-        <!-- Default panel contents -->
-        <div class="panel-heading">Lagervärde</div>
+          
+    <div class="row">
+        <div class="col-xs-6">
+
+            <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading">Lagervärde</div>
         
-        <div class="panel-body">
-            <strong>@value</strong> kr
+                <div class="panel-body">
+                    <strong>@value</strong> kr
+                </div>
+            </div>
+
+        </div>
+        <div class="col-xs-6">
+
+            <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading">Ordervärde (lagda ordrar)</div>
+
+                <div class="panel-body">
+                    <strong>@ordersTotal</strong> kr
+                </div>
+            </div>
+
         </div>
     </div>
 
-    <div class="panel panel-default">
-        <!-- Default panel contents -->
-        <div class="panel-heading">Ordervärde (lagda ordrar)</div>
 
-        <div class="panel-body">
-            <strong>@ordersTotal</strong> kr
-        </div>
-    </div>
+
 
 
     </div>

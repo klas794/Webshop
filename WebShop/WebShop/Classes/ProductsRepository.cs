@@ -146,6 +146,7 @@ namespace WebShop.Classes
                 item.Artnr = product.Artnr;
                 item.Title = product.Title;
                 item.Price = product.Price;
+                item.Description = product.Description;
 
                 if(product.ImageUrl != null)
                 {

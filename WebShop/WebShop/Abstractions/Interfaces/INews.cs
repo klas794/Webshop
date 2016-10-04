@@ -7,6 +7,7 @@ namespace WebShop.Abstractions
 {
     interface INews
     {
+        List<Product> GetProducts();
         string NewsDescription(); //om vi vill ha en beskrivande text på nyhetssidan.
         //string Gender { get; set; } //för att visa nyheter för dam eller herr.
         //string ProductType { get; set; }//för att kunna sortera på produkttyp

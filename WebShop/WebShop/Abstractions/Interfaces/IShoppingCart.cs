@@ -19,8 +19,5 @@ namespace WebShop.Abstractions.Interfaces
         int CountItems();
         List<Product> GetItems();
 
-
-
-
     }
 }

@@ -162,8 +162,12 @@ namespace WebShop.Classes
 
             SaveProducts();
         }
+
+        public List<Product> Search(string searchString)
+        {
+            return Products.FindAll(x => x.Title.ToLower().Contains(searchString.ToLower()));
+        }
+
     }
-
-
 
 }

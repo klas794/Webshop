@@ -113,3 +113,5 @@
 2016-10-05 - 18:02:55 : User placed an order for 50 kr, resulting in 5 kr profit.
 2016-10-05 - 18:24:14 : User placed an order for 10 kr, resulting in 5 kr profit.
 2016-10-05 - 18:26:55 : Admin area accessed
+2016-10-05 - 19:19:16 : User placed an order for 789 kr, resulting in 289 kr profit.
+2016-10-05 - 19:19:16 : User was sent a confirmation email.

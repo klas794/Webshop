@@ -13,27 +13,19 @@
     }
 
     var cart = Session["cart"] as ShoppingCart;
+    var page = new PageCart(cart);
 
     if (IsPost && Request.Form["buy"] != null)
     {
-        var ordersRepo = new OrdersRepository();
-
-        var totals = int.Parse(Request.Form["totals"]);
         var profit = cart.Profit();
-
-        ordersRepo.AddOrder(profit);
-
-        cart.Confirmation();
+        orderCreated = page.PlaceOrder(profit);
 
         Session["cart"] = new ShoppingCart();
         cart = Session["cart"] as ShoppingCart;
 
-        orderCreated = true;
-
-        var log = new Logger();
-        log.WriteLogMessage("User placed an order for " + totals + " kr, resulting in " + profit + " kr profit.");
-        log.WriteLogMessage("User was sent a confirmation email.");
-
+        if(orderCreated) {
+            page.LogOrder();
+        }
 
     }
 

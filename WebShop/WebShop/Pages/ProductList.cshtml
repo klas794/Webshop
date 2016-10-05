@@ -3,20 +3,38 @@
 @{
     Layout = "~/Pages/Master.cshtml";
 
-    var products = new DataBase().GetDummyProducts(20);
+    var products = new ProductsRepository().GetProducts();
+    var category = Request.QueryString["category"];
+    var title = "Alla produkter";
+
+    if(category != null)
+    {
+        var categories = new string[] { "Herr", "Dam" };
+
+        foreach (var item in categories)
+        {
+            if (category == item)
+            {
+                products = products.Where(x => x.Gender == item).ToList();
+                title = item;
+                break;
+            }
+        }
+    }
 
     var logger = new Logger();
-
-    logger.WriteLogMessage("User listing products");
+    logger.WriteLogMessage("User listing products category");
 }
 <div class="container" style="margin-top: 100px">
+    
+    <h2>@title</h2>
 
     <!-- Three columns of text below the carousel -->
     <div class="row">
         @foreach (var product in products)
         {
         <div class="col-lg-4" style="text-align: center">
-            <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+            <img class="img-circle" src="@product.ImageUrl" alt="Generic placeholder image" width="140" height="140">
             <h2>@product.Title</h2>
             <p>@product.Description</p>
             <form method="post">

@@ -9,6 +9,8 @@
     <Gender>Herr</Gender>
     <ArrivalDate>2016-09-29</ArrivalDate>
     <Description>A nice shirt</Description>
+    <Color>Red</Color>
+    <Size>S</Size>
   </Product>
   <Product>
     <Artnr>2</Artnr>
@@ -18,7 +20,9 @@
     <ImageUrl>/Images/ProductImages/oddmolly.jpg</ImageUrl>
     <Gender>Dam</Gender>
     <ArrivalDate>2016-09-22</ArrivalDate>
-    <Description>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</Description>
+    <Description>Excellent clothing from Odd Molly.</Description>
+    <Color>White</Color>
+    <Size>L</Size>
   </Product>
   <Product>
     <Artnr>3</Artnr>
@@ -28,7 +32,9 @@
     <ImageUrl>/Images/ProductImages/product3.png</ImageUrl>
     <Gender>Herr</Gender>
     <ArrivalDate>2016-09-28</ArrivalDate>
-    <Description>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</Description>
+    <Description>Stay in shelter from the wind.</Description>
+    <Color>Black</Color>
+    <Size>S</Size>
   </Product>
   <Product>
     <Artnr>4</Artnr>
@@ -39,5 +45,7 @@
     <Gender>Herr</Gender>
     <ArrivalDate>2016-09-28</ArrivalDate>
     <Description>Ull- Ganttröja</Description>
+    <Color>Red</Color>
+    <Size>S</Size>
   </Product>
 </Products>

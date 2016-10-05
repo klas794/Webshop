@@ -20,7 +20,9 @@
             Title = Request.Form["title"],
             Description = Request.Form["description"],
             BuyPrice = int.Parse(Request.Form["buyprice"]),
-            Price = int.Parse(Request.Form["retailprice"])
+            Price = int.Parse(Request.Form["retailprice"]),
+            Size = Request.Form["size"],
+            Color = Request.Form["color"]
         };
 
         HttpPostedFileBase file = Request.Files["image"];

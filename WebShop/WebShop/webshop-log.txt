@@ -115,3 +115,12 @@
 2016-10-05 - 18:26:55 : Admin area accessed
 2016-10-05 - 19:19:16 : User placed an order for 789 kr, resulting in 289 kr profit.
 2016-10-05 - 19:19:16 : User was sent a confirmation email.
+2016-10-05 - 19:47:44 : User viewing product #2
+2016-10-05 - 19:48:18 : User viewing product #2
+2016-10-05 - 19:49:37 : Admin area accessed
+2016-10-05 - 19:50:06 : Admin area accessed
+2016-10-05 - 19:50:14 : User viewing product #2
+2016-10-05 - 19:50:48 : Admin area accessed
+2016-10-05 - 19:53:57 : Admin area accessed
+2016-10-05 - 19:55:00 : Admin area accessed
+2016-10-05 - 19:55:13 : User viewing product #2

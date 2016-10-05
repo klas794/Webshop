@@ -62,6 +62,11 @@ namespace WebShop.Classes
                     string description = item
                         .Elements("Description").First().Value;
 
+                    string color = item
+                        .Elements("Color").First().Value;
+
+                    string size = item
+                        .Elements("Size").First().Value;
 
                     list.Add(new Product()
                     {
@@ -72,7 +77,9 @@ namespace WebShop.Classes
                         ImageUrl = imageUrl,
                         Gender = gender,
                         ArrivalDate = arrivalDate,
-                        Description = description
+                        Description = description,
+                        Color = color,
+                        Size = size
                     });
 
                 }
@@ -114,7 +121,9 @@ namespace WebShop.Classes
                             new XElement("ImageUrl", item.ImageUrl),
                             new XElement("Gender", item.Gender),
                             new XElement("ArrivalDate", item.ArrivalDate),
-                            new XElement("Description", item.Description)
+                            new XElement("Description", item.Description),
+                            new XElement("Color", item.Color),
+                            new XElement("Size", item.Size)
                             ));
             }
 
@@ -147,6 +156,8 @@ namespace WebShop.Classes
                 item.Title = product.Title;
                 item.Price = product.Price;
                 item.Description = product.Description;
+                item.Size = product.Size;
+                item.Color = product.Color;
 
                 if(product.ImageUrl != null)
                 {

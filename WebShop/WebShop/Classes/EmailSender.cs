@@ -5,12 +5,13 @@ using System.Linq;
 using System.Net.Mail;
 using System.Web;
 using System.Web.Hosting;
+using WebShop.Abstractions.Interfaces;
 
 namespace WebShop.Classes
 {
-    public class EmailSender
+    public class EmailSender: IEmailSender
     {
-        private SmtpClient PrepareLocalSender()
+        public SmtpClient PrepareLocalSender()
         {
             var smtpClient = new SmtpClient();
             smtpClient.DeliveryMethod = SmtpDeliveryMethod.SpecifiedPickupDirectory;
@@ -32,7 +33,7 @@ namespace WebShop.Classes
 
             /*
             client.Port = 25;
-            client.DeliveryMethod = SmtpDeliveryMethod.Network;
+            //client.DeliveryMethod = SmtpDeliveryMethod.Network;
             client.UseDefaultCredentials = false;
             client.Host = "smtp.google.com";
             */

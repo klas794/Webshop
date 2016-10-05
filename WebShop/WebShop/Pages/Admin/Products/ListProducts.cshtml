@@ -22,7 +22,9 @@
             BuyPrice = int.Parse(Request.Form["buyprice"]),
             Price = int.Parse(Request.Form["retailprice"]),
             Size = Request.Form["size"],
-            Color = Request.Form["color"]
+            Color = Request.Form["color"],
+            Gender = Request.Form["gender"],
+            ArrivalDate = Request.Form["action"] == "add" ? DateTime.Now.ToShortDateString(): null
         };
 
         HttpPostedFileBase file = Request.Files["image"];
@@ -37,7 +39,7 @@
 
             file.SaveAs(fullPath);
 
-            product.ImageUrl = fileName;
+            product.ImageUrl = path + fileName;
         }
 
         if(Request.Form["action"] == "update") {

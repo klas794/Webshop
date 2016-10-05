@@ -124,3 +124,23 @@
 2016-10-05 - 19:53:57 : Admin area accessed
 2016-10-05 - 19:55:00 : Admin area accessed
 2016-10-05 - 19:55:13 : User viewing product #2
+2016-10-05 - 19:59:26 : Admin area accessed
+2016-10-05 - 20:00:36 : Admin area accessed
+2016-10-05 - 20:02:09 : Admin area accessed
+2016-10-05 - 20:12:27 : Admin area accessed
+2016-10-05 - 20:12:47 : Admin area accessed
+2016-10-05 - 20:13:49 : Admin area accessed
+2016-10-05 - 20:13:56 : Admin area accessed
+2016-10-05 - 20:18:29 : Admin area accessed
+2016-10-05 - 20:18:44 : Admin area accessed
+2016-10-05 - 20:19:54 : Admin area accessed
+2016-10-05 - 20:25:06 : Admin area accessed
+2016-10-05 - 20:36:28 : Admin area accessed
+2016-10-05 - 20:36:42 : Admin area accessed
+2016-10-05 - 20:36:51 : Admin area accessed
+2016-10-05 - 20:50:53 : Admin area accessed
+2016-10-05 - 20:51:00 : Admin area accessed
+2016-10-05 - 20:53:15 : Admin area accessed
+2016-10-05 - 20:53:21 : Admin area accessed
+2016-10-05 - 20:55:29 : Admin area accessed
+2016-10-05 - 20:56:40 : Admin area accessed

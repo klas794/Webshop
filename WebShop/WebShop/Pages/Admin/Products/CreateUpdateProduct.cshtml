@@ -34,42 +34,53 @@
     <h2>@product.Title</h2>
 
     <div class="row">
-        <form class="col-lg-4" action="ListProducts.cshtml" method="post" enctype="multipart/form-data">
+        <form class="col-lg-12" action="ListProducts.cshtml" method="post" enctype="multipart/form-data">
             <input type="hidden" name="action" value="@action" />
             <input type="hidden" name="id" value="@product.Artnr">
-            <div class="form-group">
-                <label for="id">ID</label>
-                <input type="text" class="form-control" value="@product.Artnr" disabled="disabled">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" value="@product.Artnr" disabled="disabled">
+                </div>
+                <div class="form-group">
+                    <label for="title">Titel:</label>
+                    <input type="text" class="form-control" name="title" value="@product.Title">
+                </div>
+                <div class="form-group">
+                    <label for="buyprice">Inköpspris:</label>
+                    <input type="text" class="form-control" name="buyprice" value="@product.BuyPrice">
+                </div>
+                <div class="form-group">
+                    <label for="retailprice">Pris:</label>
+                    <input type="text" class="form-control" name="retailprice" value="@product.Price">
+                </div>
             </div>
-            <div class="form-group">
-                <label for="title">Titel:</label>
-                <input type="text" class="form-control" name="title" value="@product.Title">
-            </div>
-            <div class="form-group">
-                <label for="buyprice">Inköpspris:</label>
-                <input type="text" class="form-control" name="buyprice" value="@product.BuyPrice">
-            </div>
-            <div class="form-group">
-                <label for="retailprice">Pris:</label>
-                <input type="text" class="form-control" name="retailprice" value="@product.Price">
-            </div>
-            <div class="form-group">
-                <label for="size">Size:</label>
-                <input type="text" class="form-control" name="size" value="@product.Size">
-            </div>
-            <div class="form-group">
-                <label for="color">Color:</label>
-                <input type="text" class="form-control" name="color" value="@product.Color">
-            </div>
-            <div class="form-group">
-                <label for="description">Beskrivning:</label>
-                <textarea class="form-control" name="description">@product.Description</textarea>
-            </div>
-            <div class="form-group">
-                <label>Bild:</label>
-                <label class="btn btn-default btn-file">
-                    Välj fil <input type="file" name="image" value="" style="display: none;">
-                </label>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label for="size">Size:</label>
+                    <input type="text" class="form-control" name="size" value="@product.Size">
+                </div>
+                <div class="form-group">
+                    <label for="color">Color:</label>
+                    <input type="text" class="form-control" name="color" value="@product.Color">
+                </div>
+                <div class="form-group">
+                    <label for="description">Beskrivning:</label>
+                    <textarea class="form-control" name="description">@product.Description</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="gender">Kön:</label>
+                    <select name="gender">
+                        <option value="Herr">Herr</option>
+                        <option value="Dam" selected=@(product.Gender == "Dam")>Dam</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Bild:</label>
+                    <label class="btn btn-default btn-file">
+                        Välj fil <input type="file" name="image" value="" style="display: none;">
+                    </label>
+                </div>
             </div>
             @if (action == "update")
             {

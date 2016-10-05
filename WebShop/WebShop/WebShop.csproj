@@ -179,6 +179,7 @@
     <Compile Include="Abstractions\Interfaces\IOrdersRepository.cs" />
     <Compile Include="Abstractions\Interfaces\IProductsRepository.cs" />
     <Compile Include="Abstractions\Interfaces\IShoppingCart.cs" />
+    <Compile Include="Classes\Pages\AdminProductsPage.cs" />
     <Compile Include="Classes\Pages\PageCart.cs" />
     <Compile Include="Classes\Unused\Admin.cs" />
     <Compile Include="Classes\Pages\BasePage.cs" />

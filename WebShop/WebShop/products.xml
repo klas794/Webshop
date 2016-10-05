@@ -7,7 +7,7 @@
     <Price>10</Price>
     <ImageUrl>/Images/ProductImages/product1.png</ImageUrl>
     <Gender>Herr</Gender>
-    <ArrivalDate>2016-09-29</ArrivalDate>
+    <ArrivalDate>2016-09-25</ArrivalDate>
     <Description>A nice shirt</Description>
     <Color>Red</Color>
     <Size>S</Size>
@@ -19,7 +19,7 @@
     <Price>50</Price>
     <ImageUrl>/Images/ProductImages/oddmolly.jpg</ImageUrl>
     <Gender>Dam</Gender>
-    <ArrivalDate>2016-09-22</ArrivalDate>
+    <ArrivalDate>2016-09-29</ArrivalDate>
     <Description>Excellent clothing from Odd Molly.</Description>
     <Color>White</Color>
     <Size>L</Size>
@@ -47,5 +47,17 @@
     <Description>Ull- Ganttröja</Description>
     <Color>Red</Color>
     <Size>S</Size>
+  </Product>
+  <Product>
+    <Artnr>5</Artnr>
+    <Title>Slips Classy</Title>
+    <BuyPrice>100</BuyPrice>
+    <Price>1000</Price>
+    <ImageUrl>/Images/ProductImages/product5.jpg</ImageUrl>
+    <Gender>Herr</Gender>
+    <ArrivalDate>2016-09-05</ArrivalDate>
+    <Description>En slips</Description>
+    <Color>Black</Color>
+    <Size></Size>
   </Product>
 </Products>

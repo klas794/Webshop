@@ -7,6 +7,6 @@ namespace WebShop.Classes
 {
     public class Constants
     {
-        public const string PathProductsImages = "~/Images/ProductImages/";
+        public const string PathProductsImages = "/Images/ProductImages/";
     }
 }

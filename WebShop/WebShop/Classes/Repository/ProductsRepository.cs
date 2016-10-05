@@ -38,35 +38,26 @@ namespace WebShop.Classes
 
                 foreach (var item in products)
                 {
-                    string artnr = item
-                        .Elements("Artnr").First().Value;
+                    string artnr = item.Elements("Artnr").First().Value;
 
-                    string title = item
-                        .Elements("Title").First().Value;
+                    string title = item.Elements("Title").First().Value;
 
-                    string price = item
-                        .Elements("Price").First().Value;
+                    string price = item.Elements("Price").First().Value;
 
-                    string buyPrice = item
-                        .Elements("BuyPrice").First().Value;
+                    string buyPrice = item.Elements("BuyPrice").First().Value;
 
                     string imageUrl = item.Elements("ImageUrl") != null ? 
                         item.Elements("ImageUrl").First().Value: "";
 
-                    string gender = item
-                        .Elements("Gender").First().Value;
+                    string gender = item.Elements("Gender").First().Value;
 
-                    string arrivalDate = item
-                        .Elements("ArrivalDate").First().Value;
+                    string arrivalDate = item.Elements("ArrivalDate").First().Value;
 
-                    string description = item
-                        .Elements("Description").First().Value;
+                    string description = item.Elements("Description").First().Value;
 
-                    string color = item
-                        .Elements("Color").First().Value;
+                    string color = item.Elements("Color").First().Value;
 
-                    string size = item
-                        .Elements("Size").First().Value;
+                    string size = item.Elements("Size").First().Value;
 
                     list.Add(new Product()
                     {
@@ -158,6 +149,8 @@ namespace WebShop.Classes
                 item.Description = product.Description;
                 item.Size = product.Size;
                 item.Color = product.Color;
+                //item.ArrivalDate = product.ArrivalDate;
+                item.Gender = product.Gender;
 
                 if(product.ImageUrl != null)
                 {

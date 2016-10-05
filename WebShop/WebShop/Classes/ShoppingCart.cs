@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using WebShop.Abstractions.Interfaces;
+using System.Text;
 
 namespace WebShop.Classes
 {
@@ -15,7 +16,6 @@ namespace WebShop.Classes
         public void AddItem(Product p)
         {
             _products.Add(p);
-
         }
 
         public void ClearCart()
@@ -25,7 +25,20 @@ namespace WebShop.Classes
 
         public void Confirmation()
         {
-            throw new NotImplementedException();
+            var emailSender = new EmailSender();
+            var message = new StringBuilder();
+
+            message.AppendLine("Your order has been processed. Your order details:");
+
+            foreach (var item in GetItems())
+            {
+                message.AppendLine(item.Title + ": " + item.Price + " kr");
+            }
+
+            message.AppendLine("Totals: " + TotalAmount() + " kr");
+
+            emailSender.DeliverEmail("Order", message.ToString());
+
         }
 
         public int CountItems()

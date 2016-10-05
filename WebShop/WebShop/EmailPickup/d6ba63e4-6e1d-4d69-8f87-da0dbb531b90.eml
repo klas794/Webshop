@@ -1,0 +1,12 @@
+X-Sender: delivery@webshop.se
+X-Receiver: customer@gmail.com
+MIME-Version: 1.0
+From: delivery@webshop.se
+To: customer@gmail.com
+Date: 5 Oct 2016 18:24:14 +0200
+Subject: Order
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: quoted-printable
+
+Your order has been processed. Your order details:=0D=0AShirt: 10=
+ kr=0D=0ATotals: 10 kr=0D=0A

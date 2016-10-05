@@ -32,17 +32,18 @@ namespace WebShop.Classes
 
                 // version 2
 
-                //listOfUsers.FindAll(x => x.Password == password && x.UserName == userName);
-                //return listOfUsers.Count > 0;
+                CurrentUser = listOfUsers.Find(x => x.Password == password && x.UserName == userName);
+
+                return CurrentUser != null;
 
                 // version 1
-
+                /*
                 User user = listOfUsers.First();
 
                 CurrentUser = user;
 
                 return user.UserName == userName && user.Password == password;
-
+                */
             }
             catch (Exception)
             {
@@ -180,27 +181,21 @@ namespace WebShop.Classes
 
             var doc = XDocument.Load(HttpContext.Current.Server.MapPath(@"~\users.xml"));
 
-            
-            string username = doc.Elements("Users")
-                .Elements("User").ToList()
-                .Elements("UserName").First().Value;
-
-            string pass = doc.Elements("Users")
-                .Elements("User")
-                .Elements("Password").First().Value;
-
-            string isAdmin = doc.Elements("Users")
-                .Elements("User")
-                .Elements("IsAdmin").First().Value;
-
             var list = new List<User>();
 
-            list.Add(new User()
+            foreach (var item in doc.Elements("Users").Elements("User"))
             {
-                UserName = username,
-                Password = pass,
-                IsAdmin = bool.Parse(isAdmin)
-            });
+                string username = item.Elements("UserName").First().Value;
+                string pass = item.Elements("Password").First().Value;
+                string isAdmin = item.Elements("IsAdmin").First().Value;
+
+                list.Add(new User()
+                {
+                    UserName = username,
+                    Password = pass,
+                    IsAdmin = bool.Parse(isAdmin)
+                });
+            }
 
             return list;
 

@@ -126,7 +126,9 @@
     <Content Include="Images\ProductImages\oddmolly.jpg" />
     <Content Include="Images\ProductImages\product1.png" />
     <Content Include="Images\ProductImages\product2.png" />
-    <Content Include="orders.xml" />
+    <Content Include="orders.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -151,6 +153,8 @@
     <Content Include="Tests\logger.cshtml" />
     <Content Include="Pages\SearchResult.cshtml" />
     <Content Include="Pages\ShoppingCart.cshtml" />
+    <Content Include="Pages\Admin\Products\CreateUpdateProduct.cshtml" />
+    <Content Include=".gitignore" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -178,6 +182,7 @@
     <Compile Include="Classes\BasePage.cs" />
     <Compile Include="Classes\Constants.cs" />
     <Compile Include="Classes\DataBase.cs" />
+    <Compile Include="Classes\EmailSender.cs" />
     <Compile Include="Classes\Enums\Gender.cs" />
     <Compile Include="Classes\FileHandler.cs" />
     <Compile Include="Classes\Logger.cs" />
@@ -191,6 +196,9 @@
     <Compile Include="Classes\User.cs" />
     <Compile Include="Classes\UserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="EmailPickup\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

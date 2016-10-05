@@ -73,3 +73,43 @@
 2016-09-30 - 16:22:35 : Admin area accessed
 2016-09-30 - 16:28:38 : User placed an order for 10 kr
 2016-09-30 - 16:28:43 : Admin area accessed
+2016-10-04 - 11:58:10 : User searching products
+2016-10-04 - 12:00:11 : User searching products
+2016-10-04 - 12:00:16 : User searching products
+2016-10-04 - 12:01:56 : User searching products
+2016-10-04 - 12:02:45 : User searching products
+2016-10-04 - 12:09:50 : User searching products
+2016-10-04 - 12:09:56 : User searching products
+2016-10-04 - 12:10:01 : User searching products
+2016-10-04 - 12:10:04 : User searching products
+2016-10-04 - 12:10:23 : User listing products
+2016-10-04 - 13:34:20 : Admin area accessed
+2016-10-04 - 13:34:20 : Admin area accessed
+2016-10-04 - 13:42:10 : Admin area accessed
+2016-10-04 - 13:45:03 : Admin area accessed
+2016-10-04 - 13:45:28 : Admin area accessed
+2016-10-04 - 13:46:21 : Admin area accessed
+2016-10-04 - 13:50:08 : Admin area accessed
+2016-10-04 - 13:50:32 : Admin area accessed
+2016-10-04 - 13:55:52 : Admin area accessed
+2016-10-04 - 13:57:10 : Admin area accessed
+2016-10-04 - 13:57:27 : Admin area accessed
+2016-10-04 - 13:57:46 : Admin area accessed
+2016-10-05 - 10:15:44 : User listing products category
+2016-10-05 - 10:16:00 : User listing products category
+2016-10-05 - 10:17:02 : User listing products category
+2016-10-05 - 10:19:50 : User listing products category
+2016-10-05 - 10:20:38 : User listing products category
+2016-10-05 - 10:34:24 : User listing products category
+2016-10-05 - 10:35:43 : User listing products category
+2016-10-05 - 10:36:52 : User listing products category
+2016-10-05 - 10:37:24 : User listing products category
+2016-10-05 - 10:38:12 : User listing products category
+2016-10-05 - 10:38:21 : User listing products category
+2016-10-05 - 10:38:34 : User listing products category
+2016-10-05 - 10:41:59 : User listing products category
+2016-10-05 - 10:43:08 : User listing products category
+2016-10-05 - 18:02:30 : Admin area accessed
+2016-10-05 - 18:02:55 : User placed an order for 50 kr, resulting in 5 kr profit.
+2016-10-05 - 18:24:14 : User placed an order for 10 kr, resulting in 5 kr profit.
+2016-10-05 - 18:26:55 : Admin area accessed

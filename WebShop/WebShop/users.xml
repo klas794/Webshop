@@ -7,4 +7,11 @@
     <Address>Farsta123</Address>
     <IsAdmin>true</IsAdmin>
   </User>
+  <User>
+    <UserName>Kund</UserName>
+    <Password>1234</Password>
+    <Email>Nacka@nacka.se</Email>
+    <Address>Farsta123</Address>
+    <IsAdmin>false</IsAdmin>
+  </User>
 </Users>

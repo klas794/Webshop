@@ -1,5 +1,6 @@
 ﻿@using WebShop.Classes;
 @using System.Text.RegularExpressions;
+@using System.Text;
 
 @{
     Layout = "~/Pages/Master.cshtml";
@@ -22,13 +23,18 @@
 
         ordersRepo.AddOrder(profit);
 
+        cart.Confirmation();
+
         Session["cart"] = new ShoppingCart();
         cart = Session["cart"] as ShoppingCart;
 
         orderCreated = true;
 
         var log = new Logger();
-        log.WriteLogMessage("User placed an order for " + totals + " kr");
+        log.WriteLogMessage("User placed an order for " + totals + " kr, resulting in " + profit + " kr profit.");
+        log.WriteLogMessage("User was sent a confirmation email.");
+
+
     }
 
     var items = cart.GetItems();
@@ -44,7 +50,7 @@
         <div class="alert alert-success" role="alert">
             <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
             <span class="sr-only">Order:</span>
-            Your order is completed!
+            Your order is completed! An order confirmation email was sent.
         </div>
     }
     
@@ -111,14 +117,14 @@
         </div>
     </div>
 
-    @if(Session["userLoggedIn"] as bool? == true && @cart.CountItems() > 0)
+    @if(Session["userLoggedIn"] as bool? == true && cart.CountItems() > 0)
     {
         <form method="post">
             <input type="hidden" name="totals" value="@cart.TotalAmount()" />
             <input type="submit" name="buy" value="Köp" />
         </form>
     }
-    else
+    else if(Session["userLoggedIn"] as bool? != true )
     {
         <a href="~/Pages/Login.cshtml" class="btn btn-default">Logga in för att köpa</a>
     }

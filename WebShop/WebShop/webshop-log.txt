@@ -144,3 +144,49 @@
 2016-10-05 - 20:53:21 : Admin area accessed
 2016-10-05 - 20:55:29 : Admin area accessed
 2016-10-05 - 20:56:40 : Admin area accessed
+2016-11-10 - 20:43:58 : User viewing product #2
+2016-11-10 - 20:44:02 : User viewing product #2
+2016-11-10 - 20:44:03 : User viewing product #2
+2016-11-10 - 20:44:55 : Admin area accessed
+2016-11-10 - 20:45:59 : Admin area accessed
+2016-11-10 - 20:46:21 : Admin area accessed
+2016-11-14 - 19:18:27 : User searching products
+2016-11-14 - 19:19:53 : User searching products
+2016-11-14 - 19:20:01 : User searching products
+2016-11-14 - 19:21:30 : User searching products
+2016-11-14 - 19:21:33 : User searching products
+2016-11-14 - 19:29:10 : User searching products
+2016-11-14 - 19:29:10 : User searching products
+2016-11-14 - 19:29:13 : User searching products
+2016-11-14 - 19:31:58 : User viewing product #1
+2016-11-14 - 19:32:00 : User viewing product #1
+2016-11-14 - 19:32:28 : User searching products
+2016-11-14 - 19:33:33 : User searching products
+2016-11-14 - 19:34:22 : User searching products
+2016-11-14 - 19:36:04 : User searching products
+2016-11-14 - 19:36:07 : User searching products
+2016-11-14 - 19:37:37 : User searching products
+2016-11-14 - 19:44:55 : User listing products category
+2016-11-14 - 19:45:00 : User listing products category
+2016-11-14 - 19:48:33 : User listing products category
+2016-11-14 - 19:49:23 : User listing products category
+2016-11-14 - 19:50:29 : User listing products category
+2016-11-15 - 08:51:44 : User searching products
+2016-11-15 - 08:52:24 : Admin area accessed
+2016-11-15 - 08:52:44 : Admin area accessed
+2016-11-15 - 08:53:15 : Admin area accessed
+2016-11-15 - 08:53:40 : Admin area accessed
+2016-11-15 - 10:01:10 : Admin area accessed
+2016-12-23 - 15:58:40 : User viewing product #2
+2016-12-23 - 15:59:07 : User listing products category
+2016-12-23 - 15:59:15 : User listing products category
+2016-12-23 - 15:59:35 : User searching products
+2016-12-23 - 15:59:59 : User placed an order for 55 kr, resulting in 10 kr profit.
+2016-12-23 - 15:59:59 : User was sent a confirmation email.
+2016-12-30 - 17:47:32 : User listing products category
+2016-12-30 - 17:47:37 : User viewing product #3
+2016-12-30 - 17:47:42 : User viewing product #3
+2016-12-30 - 17:48:04 : Admin area accessed
+2016-12-30 - 17:48:30 : Admin area accessed
+2016-12-30 - 17:48:33 : Admin area accessed
+2016-12-30 - 17:48:51 : Admin area accessed

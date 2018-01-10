@@ -33,8 +33,10 @@
     <div class="row">
         @foreach (var product in products)
         {
-        <div class="col-lg-4" style="text-align: center">
-            <img class="img-circle" src="@product.ImageUrl" alt="Generic placeholder image" width="140" height="140">
+        <div class="col-lg-4" style="text-align: center; margin-bottom: 30px">
+            <a href="~/Pages/ProductPage.cshtml?id=@product.Artnr">
+                <img class="img-circle" src="@product.ImageUrl" alt="Generic placeholder image" width="140" height="140">
+                </a>
             <h2>@product.Title</h2>
             <p>@product.Description</p>
             <form method="post">

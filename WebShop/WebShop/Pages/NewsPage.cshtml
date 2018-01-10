@@ -24,8 +24,10 @@
             @{var myNews = new WebShop.Classes.News(); }
             @foreach (var product in myNews.GetProducts().OrderByDescending(x => x.ArrivalDate))
             {
-                <div class="col-lg-4" style="text-align: center">
-                    <img class="img-circle" src="@product.ImageUrl" alt="Generic placeholder image" width="140" height="140">
+                <div class="col-lg-4" style="text-align: center; margin-bottom: 30px">
+                    <a href="~/Pages/ProductPage.cshtml?id=@product.Artnr">
+                        <img class="img-circle" src="@product.ImageUrl" alt="Generic placeholder image" width="140" height="140">
+                    </a>
                     <h2>@Html.Raw(product.Title)</h2>
                     <p>
                         @Html.Label("Pris: ")

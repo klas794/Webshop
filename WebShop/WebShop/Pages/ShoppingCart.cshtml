@@ -113,7 +113,7 @@
     {
         <form method="post">
             <input type="hidden" name="totals" value="@cart.TotalAmount()" />
-            <input type="submit" name="buy" value="Köp" />
+            <input type="submit" name="buy" value="Köp" class="btn btn-default" />
         </form>
     }
     else if(Session["userLoggedIn"] as bool? != true )
